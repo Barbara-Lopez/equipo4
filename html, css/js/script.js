@@ -1,7 +1,9 @@
- var pequeñoReso=window.matchMedia("(max-width: 315px)")
- if(pequeñoReso.matches){
+/*
+     var pequeñoReso=window.matchMedia("(max-width: 315px)");
+     if(pequeñoReso.matches){
         document.getElementById("titulo").style.display = "none";
     }
+*/
 function actionNav(){
     var mobileReso = window.matchMedia("(max-width: 550px)")
     var tabletReso = window.matchMedia("(max-width: 768px)")
