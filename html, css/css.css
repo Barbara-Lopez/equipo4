@@ -8,29 +8,44 @@
 }
 #contenedor{
     width: 95%;
+    max-width: 1200px;
+    min-width: 360px;
     margin: 0 auto;
 }
+
 /* Cabecera */
 header {
+    float: left;
+    clear: both;    
     width: 100%;
+    height: 10em;
 }
 header #logo-principal{
-    display: inline-block;
-    max-width: 200px;
+    float: left;
+    height: 10em;
 }
 header>h1{
-    display: inline-block;
-    padding:  1em;
+    float: left;
+    height: 5em;
+    padding: 1em;
+}
+/* Cuerpo */
+#contenido{
+    float: left;
+    padding: 0;
 }
 
 /* Navegador */
-
-#contenido{
-    padding: 0;
-}
 #contenido #boton-menu{
     height: 1.5em;
+    font-size:2em;
+    cursor:pointer;
     position: absolute;
+    border: 1px solid black;
+    border-radius: 25%;
+}
+#contenido #boton-menu:hover{
+    color: grey;
 }
 #contenido #sidenav{
     padding-top: 3em;
@@ -39,14 +54,54 @@ header>h1{
     float: left;
 }
 
-/* Cuerpo */
+#sidenav ul li{
+    list-style: none;
+    padding: 0.5em;
+    padding-left: 0.75em;
+}
+#sidenav ul li:hover{
+    color: grey;
+    padding-left: 0.90em;
+}
+
+/* Main */
 #contenido #main{
     float: right;
-    padding-left: 2em;
+    padding: 1em;
+    padding-left: 2.2em;
     height: 100%;
+}
+
+#contenido #main p{
+    padding: 0.5em;
 }
 
 /* Pie de pagina */
 footer{
     width: 100%;
+}
+
+/* Media query */
+@media screen and (min-width : 320px) and (max-width : 480px) {
+    #contenedor{
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    header {
+        float: left;
+        clear: both;    
+        width: 100%;
+        height: 5em;
+    }
+    header #logo-principal{
+        float: left;
+        height: 5em;
+    }
+    header>h1{
+        float: left;
+        height: 5em;
+        padding: 0.5em;
+    }
+
 }
