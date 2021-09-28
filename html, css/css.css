@@ -1,4 +1,3 @@
-/* todo */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -12,8 +11,6 @@
     min-width: 360px;
     margin: 0 auto;
 }
-
-/* Cabecera */
 header {
     float: left;
     clear: both;    
@@ -22,20 +19,25 @@ header {
 }
 header #logo-principal{
     float: left;
-    height: 9em;
+    height: 10em;
 }
 header>h1{
     float: left;
     height: 5em;
     padding: 1em;
 }
-/* Cuerpo */
 #contenido{
     float: left;
     padding: 0;
 }
+#contenido #main img{
+    float: left;
+    width: 30%;
+    margin-right: 1em;
+}
 
-/* Navegador */
+
+/*Aqui empieza codigo sidenav */
 #contenido #boton-menu{
     height: 1.5em;
     font-size:2em;
@@ -53,7 +55,15 @@ header>h1{
     background-color: red;
     float: left;
 }
-
+#contenido #main{
+    float: right;
+    padding: 1em;
+    padding-left: 2.2em;
+    height: 100%;
+}
+#contenido #main p{
+    padding: 0.5em;
+}
 #sidenav ul li{
     list-style: none;
     padding: 0.5em;
@@ -63,26 +73,10 @@ header>h1{
     color: grey;
     padding-left: 0.90em;
 }
+/*Aqui acaba codigo sidenav */
 
-/* Main */
-#contenido #main{
-    float: right;
-    padding: 1em;
-    padding-left: 2.2em;
-    height: 100%;
-}
-
-#contenido #main p{
-    padding: 0.5em;
-}
-
-/* Pie de pagina */
-footer{
-    width: 100%;
-}
-
-/* Media query */
-@media screen and (min-width : 320px) and (max-width : 550px) {
+/* Smartphones (portrait and landscape) ----------- */
+@media screen and (min-width : 320px) and (max-width : 480px) {
     #contenedor{
         width: 100%;
         max-width: 1200px;
@@ -103,5 +97,6 @@ footer{
         height: 5em;
         padding: 0.5em;
     }
+
 
 }
