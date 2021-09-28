@@ -1,5 +1,5 @@
 function actionNav(){
-    var mobileReso = window.matchMedia("(max-width: 480px)")
+    var mobileReso = window.matchMedia("(max-width: 550px)")
     var tabletReso = window.matchMedia("(max-width: 768px)")
     var desktopReso = window.matchMedia("(min-width: 768px)")
 
