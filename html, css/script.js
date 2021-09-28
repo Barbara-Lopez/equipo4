@@ -22,6 +22,6 @@ function actionNav(){
         document.getElementById("sidenav").style.display = "none";
         document.getElementById("main").style.width = "100%";
         document.getElementById("main").style.paddingLeft = "2.2em";
-        document.body.style.backgroundColor = "white";
+
     }
 }
