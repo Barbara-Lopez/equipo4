@@ -3,7 +3,6 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    border: 1px solid black;
     border-collapse: collapse;
 }
 #contenedor{
@@ -19,19 +18,23 @@ header {
     clear: both;    
     width: 100%;
     height: 10em;
+    background-color: #35ca58;
 }
 header #logo-principal{
     float: left;
     height: 9em;
 }
 header>h1{
+    border: 1px solid red;
     float: left;
     height: 5em;
     padding: 1em;
+    text-align: center;
 }
 /* Cuerpo */
 #contenido{
     float: left;
+    margin-top: 1em;
     padding: 0;
 }
 
@@ -68,7 +71,7 @@ header>h1{
 #contenido #main{
     float: right;
     padding: 1em;
-    padding-left: 2.2em;
+    padding-left: 3em;
     height: 100%;
 }
 
@@ -82,6 +85,7 @@ footer{
 }
 
 /* Media query */
+
 @media screen and (min-width : 320px) and (max-width : 550px) {
     #contenedor{
         width: 100%;
@@ -105,3 +109,7 @@ footer{
     }
 
 }
+
+
+
+
