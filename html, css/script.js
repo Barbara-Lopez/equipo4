@@ -8,13 +8,13 @@ function actionNav(){
             document.getElementById("sidenav").style.width = "100%";
             document.getElementById("sidenav").style.display = "inherit";
             document.getElementById("main").style.width = "100%";
-            document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-        }else{
+        }
+        else{
             document.getElementById("sidenav").style.width = "20%";
             document.getElementById("sidenav").style.display = "inherit";
             document.getElementById("main").style.width = "80%";
             document.getElementById("main").style.paddingLeft = "1em";
-            document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+           
         }
     }
     else{
