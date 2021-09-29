@@ -4,12 +4,17 @@
     margin: 0;
     padding: 0;
     border-collapse: collapse;
+
 }
 #contenedor{
     width: 95%;
     max-width: 1350px;
     min-width: 360px;
     margin: 0 auto;
+    font-family: 'Arvo', serif;
+}
+h1{
+    font-family: 'Comfortaa', cursive;
 }
 
 /* Cabecera */
@@ -96,6 +101,7 @@ header>a#prueba{
 
 #contenido #main p{
     padding: 0.5em;
+    
 }
 /*codigo formulario*/
 #contenido>form{
