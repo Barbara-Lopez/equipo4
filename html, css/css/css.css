@@ -32,11 +32,24 @@ header>h1{
     height: 5em;
     padding: 1em;
 }
+header>a{
+    float: right;
+    margin: 4%;
+    padding: 1%;
+    color: white;
+    text-decoration: none;
+    border: 1px solid #ccc;
+    border-radius: 0.3em;
+}
+header>a:hover{
+    background-color: rgb(255, 255, 255,0.6);
+}
 /* Cuerpo */
 #contenido{
     background-color: #F0EBEB;
     float: left;
     padding: 0;
+    width: 100%;
 }
 
 /* Navegador */
@@ -80,10 +93,11 @@ header>h1{
     padding: 0.5em;
 }
 /*codigo formulario*/
-#contenido #main>form{
+#contenido>form{
     margin: 0 auto;
+    padding: 2% 10% ;
 }
-#contenido #main>form>input{
+#contenido>form>input{
     width: 100%;
     padding: 1em 1.7em;
     margin: 0.7em 0;
@@ -125,8 +139,7 @@ footer {
     line-height: 2em;
 }
 
-.footer-items h1 {
-}
+
 
 .border1 {
     height: 3px;
