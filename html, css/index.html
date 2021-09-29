@@ -1,74 +1,76 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  	<link rel="stylesheet" href="css.css">
-	<title></title>
-</head>
-<body>
-	<div id="contenedor">
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="img/logotipo.png">
+        <title>Document</title>
+        <link rel="stylesheet" type="text/css" href="css/css.css">
+        
+        
+    </head>
+    <body >
+        <div id="contenedor">
+            
+            <header>
+                <img id="logo-principal" src="img/logotipo.png" alt="trebureus">
+                <h1 id="titulo">Titulo</h1>
+            </header>
+            <div id="contenido">
+                <span id="boton-menu" style="font-size:2em;cursor:pointer" onclick="actionNav()">&#9776;</span>
+                <nav id="sidenav">
+                    <ul>
+                        <li><a href="">primera pagina</a></li>
+                        <li><a href="">segunda pagina</a></li>
+                    </ul>
+                </nav>
+                <script src="js/script.js"></script>
+                <main id="main">
+                    <h2>Titulo</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis, dolores porro 
+                        quisquam odio error dignissimos mollitia dolorum quod, magnam animi explicabo distinctio 
+                        adipisci, expedita et magni laudantium? Ex, fuga ad. wdasfvfdbxxxxxxxxchfgxfgvfbscxhvj 
+                        xjnb csdb vdzc bdscv dudsfbgivhdcv gdhcvdvcdsvhjshd hdvsvhvchsvdh hsdvsdvhbd</p>
+                </main>
+            </div>
+            <footer>
+                <d class="contenido-footer">
 
-		<header>
-			<img id="logo-principal" src="logo.png" alt="trebureus">
-			<h1>Titulo principal</h1>
-		</header>
+            <!--  sobre nuestra empresa -->
+                <div class="footer-items">
+                    <h1>Company Name</h1>
+                    <p>Description of any product or motto of the company.</p>
+                </div>
 
-		<div id="contenido">
-			<span id="boton-menu" style="" onclick="actionNav()">&#9776;</span>
-			<div id="sidenav">
-					<ul>
-						<li>Home</li>
-						<li>Contacto</li>
-					</ul>
-			</div>
-			<div id="main">
-				<h2>Titulo contenido</h2>
-				<img id="main-img" src="logo.png" alt="travia"/>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			</div>
-		</div>
-		<script>	
+            <!--  enlaces  -->
+                <div class="footer-items">
+                  <h3>Quick Links</h3>
+                  <div class="border1"></div> <!--for the underline -->
+                    <ul>
+                      <a href="#"><li>Home</li></a>
+                      <a href="#"><li>Search</li></a>
+                      <a href="#"><li>Contact</li></a>
+                      <a href="#"><li>About</li></a>
+                    </ul>
+                </div>
 
-			function actionNav(){
-				var mobileReso = window.matchMedia("(max-width: 480px)")
-				var tabletReso = window.matchMedia("(max-width: 768px)")
-				var desktopReso = window.matchMedia("(min-width: 768px)")
-
-				if(document.getElementById("sidenav").style.display == "none"){
-					if(mobileReso.matches){
-						document.getElementById("sidenav").style.width = "100%";
-						document.getElementById("sidenav").style.display = "inherit";
-						document.getElementById("main").style.width = "100%";
-						document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-					}else{
-						document.getElementById("sidenav").style.width = "20%";
-						document.getElementById("sidenav").style.display = "inherit";
-						document.getElementById("main").style.width = "80%";
-						document.getElementById("main").style.paddingLeft = "1em";
-						document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-					}
-				}
-				else{
-					document.getElementById("sidenav").style.width = "0";
-					document.getElementById("sidenav").style.display = "none";
-					document.getElementById("main").style.width = "100%";
-					document.getElementById("main").style.paddingLeft = "2.2em";
-					document.body.style.backgroundColor = "white";
-				}
-			}
-
-
-		</script>
-		<footer>
-			
-		</footer>
-	</div>
-
-</body>
+            <!--  contacto -->
+                <div class="footer-items">
+                  <h3>Contact us</h3>
+                  <div class="border1"></div>
+                    <ul>
+                      <li><i class="fa fa-map-marker" aria-hidden="true"></i>XYZ, abc</li>
+                      <li><i class="fa fa-phone" aria-hidden="true"></i>123456789</li>
+                      <li><i class="fa fa-envelope" aria-hidden="true"></i>xyz@gmail.com</li>
+                    </ul> 
+                </div>
+              
+            <!--   letra pequena  -->
+              <div class="footer-bottom">
+                Copyright &copy; Food and Burps 2020.
+              </div>
+            </footer>
+    </body>
 </html>
