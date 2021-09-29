@@ -10,9 +10,9 @@ h1{
     font-family: Cursive;
 }
 #contenedor{
+    overflow-x: hidden;
     width: 95%;
     height: 100%;
-    max-width: 1200px;
     min-width: 360px;
     margin: 0 auto;
 }
@@ -76,6 +76,7 @@ header #titulo{
     border-bottom-right-radius: 2em;
 }
 #sidenav ul{
+    overflow-x: hidden;
     border-top-right-radius: 2em;
     border-bottom-right-radius: 2em;
     background: rgb(199,232,208);
@@ -84,7 +85,6 @@ header #titulo{
 }
 
 #sidenav ul li{
-    overflow-y: hidden;
     list-style: none;
     padding: 0.5em;
     padding-left: 0.75em;
@@ -223,55 +223,58 @@ footer {
 }
 
 
-/* Media query */
-@media screen and (max-width : 315px) {
-    #contenedor{
-        width: 100%;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-    header {
-        float: left;
-        clear: both;    
-        width: 100%;
-        height: 5em;
-    }
-    header #logo-principal{
-        float: none;
-        height: 5em;
-        margin-left: 1em;
-        margin-top: 0;
-    }
-    header>h1{
-       display: none;
-    }
 
-}
-@media screen and (min-width : 315px) and (max-width : 550px) {
+/*moviles*/
+@media screen and (max-width : 550px) {
     #contenedor{
         width: 100%;
-        max-width: 1200px;
-        margin: 0 auto;
+
     }
-    header {
-        float: left;
-        clear: both;    
+    #contenido{
         width: 100%;
-        height: 5em;
     }
-    header #logo-principal{
-        float: left;
-        height: 5em;
-        margin-top: 0;
+    header #logo-slogan{
+        width: 100%;
     }
-    header>h1{
-        float: left;
+    
+    header #titulo{
+        display: none;
         height: 5em;
         padding: 0.5em;
     }
+    footer .footer-items{
+        width: 100%;
+    }
 
+}
+
+/* tamano mediano (tablets...)*/
+@media screen and (min-width: 550px) and (max-width: 990px) { 
+#contenedor{
+        width: 100%;
+
+    }
+    #contenido{
+        width: 100%;
+    }
+    footer .footer-items{
+        width: 100%;
+    }
+}
+
+/* tamano grande (pantallas grandes...)*/
+@media screen and (min-width: 990px) and (max-width: 1400px) { 
+#contenedor{
+        max-width: 1200px;
+        width: 95%;
+
+    }
+    #contenido{
+        width: 100%;
+    }
+    
 }
 
 
 
-
+    
