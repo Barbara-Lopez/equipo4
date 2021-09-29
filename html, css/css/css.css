@@ -78,6 +78,19 @@ header>h1{
 #contenido #main p{
     padding: 0.5em;
 }
+/*codigo formulario*/
+#contenido #main>form{
+    margin: 0 auto;
+}
+#contenido #main>form>input{
+    width: 100%;
+    padding: 1em 1.7em;
+    margin: 0.7em 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 0.3em;
+  }
+
 
 /* Pie de pagina */
 footer {
@@ -99,7 +112,7 @@ footer {
  }
 
 .footer-items {
-    width: cal(100%/3);
+    width: calc(100%/3);
     padding: 1em 4em;
     box-sizing: border-box;
 }
