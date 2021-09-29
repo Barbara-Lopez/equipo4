@@ -18,8 +18,8 @@ header {
     clear: both;    
     width: 100%;
     height: 8em;
-    background: rgb(1,40,10);
-    background: linear-gradient(278deg, rgba(1,40,10,0.8309698879551821) 0%, rgba(32,185,16,0.7777485994397759) 50%, rgba(37,105,61,0.8309698879551821) 100%);
+    background: rgb(37,105,61);
+    background: linear-gradient(90deg, rgba(37,105,61,1) 0%, rgba(170,233,40,1) 100%, rgba(37,105,61,1) 100%);
 }
 header #logo-principal{
     float: left;
@@ -44,6 +44,11 @@ header>a{
 header>a:hover{
     background-color: rgb(255, 255, 255,0.6);
 }
+header>a#prueba{
+    color: black;
+    border: 1px solid black;
+}
+
 /* Cuerpo */
 #contenido{
     background-color: #F0EBEB;
