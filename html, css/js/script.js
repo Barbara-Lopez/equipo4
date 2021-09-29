@@ -39,7 +39,7 @@ function actionNav(){
 
 function validarUsuario() {
     let nombre=document. getElementById ("user").value;
-    regNombre=new RegExp("^[A-Z]{1}[A-Za-z]{0,}$")
+    regNombre=new RegExp("^[A-Z]{1}[A-Za-z]*$")
     if (regNombre.test(nombre)) 
     {
         validarContraseña();
@@ -50,7 +50,7 @@ function validarUsuario() {
 
 function validarContraseña() {
     let passwd=document. getElementById ('passwd').value;
-    regPasswd=new RegExp("^[0-9]{1,}$")
+    regPasswd=new RegExp("^[0-9]+$")
     if (regPasswd.test(passwd)) 
     {
         alert("Usuario y contraseña valido")

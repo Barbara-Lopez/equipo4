@@ -82,7 +82,7 @@ header>h1{
 }
 #contenido #main>form{margin: 0 auto;
 }
-#contenido #main>form>input[type=text]{
+#contenido #main>form>input{
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
