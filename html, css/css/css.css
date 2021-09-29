@@ -18,7 +18,8 @@ header {
     clear: both;    
     width: 100%;
     height: 8em;
-    background-color: #35ca58;
+    background: rgb(1,40,10);
+    background: linear-gradient(278deg, rgba(1,40,10,0.8309698879551821) 0%, rgba(32,185,16,0.7777485994397759) 50%, rgba(37,105,61,0.8309698879551821) 100%);
 }
 header #logo-principal{
     float: left;
@@ -33,8 +34,8 @@ header>h1{
 }
 /* Cuerpo */
 #contenido{
+    background-color: #F0EBEB;
     float: left;
-    margin-top: 1em;
     padding: 0;
 }
 
@@ -97,7 +98,8 @@ footer {
     float: left;
     clear: both;
     width: 100%;
-    background: #35ca58;
+    background: rgb(1,40,10);
+    background: linear-gradient(278deg, rgba(1,40,10,0.8309698879551821) 0%, rgba(32,185,16,0.7777485994397759) 50%, rgba(37,105,61,0.8309698879551821) 100%);
     display: block;
  }
 

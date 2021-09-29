@@ -33,3 +33,31 @@ function actionNav(){
     }
     
 }
+
+/* usuario y contraseña */
+
+
+function validarUsuario() {
+    let nombre=document. getElementById ("user").value;
+    regNombre=new RegExp("^[A-Z]{1}[A-Za-z]{0,}$")
+    if (regNombre.test(nombre)) 
+    {
+        validarContraseña();
+    }
+    else 
+        alert("El usuario o la contaseña no es correcta") ;
+}
+
+function validarContraseña() {
+    let passwd=document. getElementById ('passwd').value;
+    regPasswd=new RegExp("^[0-9]{1,}$")
+    if (regPasswd.test(passwd)) 
+    {
+        alert("Usuario y contraseña valido")
+        window.location="../index.html";
+
+    }
+    else 
+       alert("El usuario o la contaseña no es correcta");
+      
+}
