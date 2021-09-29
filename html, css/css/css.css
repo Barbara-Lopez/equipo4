@@ -36,7 +36,7 @@ header>h1{
 #contenido{
     background-color: #F0EBEB;
     float: left;
-    padding: 0;
+    padding-top: 1em;
 }
 
 /* Navegador */
@@ -54,18 +54,34 @@ header>h1{
 #contenido #sidenav{
     padding-top: 3em;
     display: none;
-    background-color: red;
     float: left;
+    border-top-right-radius: 2em;
+    border-bottom-right-radius: 2em;
+    background: rgb(199,232,208);
+    background: linear-gradient(326deg, rgba(199,232,208,0.46367310725552047) 0%, rgba(140,198,143,0.7633576498422713) 50%);
 }
 
 #sidenav ul li{
     list-style: none;
     padding: 0.5em;
     padding-left: 0.75em;
+    border-bottom: 1px solid lightgrey;
+    border-top: 1px solid lightgrey;
 }
 #sidenav ul li:hover{
     color: grey;
     padding-left: 0.90em;
+}
+#sidenav ul li a{
+    display: block;
+    text-decoration: none;
+    padding: 0.5em;
+    padding-left: 0.75em;
+}
+#sidenav ul li a:hover{
+    background-color: rgb(171, 171, 171, 0.4 );
+    border-radius: 1em;
+    overflow-x: hidden;
 }
 
 /* Main */
