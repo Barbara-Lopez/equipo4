@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!-- AWP_In_Variable Name='"DB".ORIGEN' --> 
+<!-- AWP_In_Variable Name='"DB".AUTO' --> 
+<!-- AWP_In_Variable Name='"DB".STOP' --> 
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="img/logotipo.png">
+        <title>Document</title>
+        <link rel="stylesheet" type="text/css" href="../css/css.css">
+        <script src="../js/script.js"></script>
+        
+        
+    </head>
+    <body >
+        <div id="contenedor">
+            
+            <header>
+                <img id="logo-principal" src="img/logotipo.png" alt="trebureus">
+                <h1 id="titulo">Titulo</h1>
+            </header>
+            <div id="contenido">
+                <span id="boton-menu" style="font-size:2em;cursor:pointer" onclick="actionNav()">&#9776;</span>
+                <nav id="sidenav">
+                    <ul>
+                        <li><a href="">primera pagina</a></li>
+                        <li><a href="">segunda pagina</a></li>
+                    </ul>
+                </nav>
+               
+                <main id="main">
+                    <div id="pilotos">
+                        <b>ORIGEN&#10148;</b>
+                        <span class="status ok"></span>
+                        <b>SEMAFORO&#10148;</b>
+                        <span class="status noOk"></span>
+                        <b>INP&#10148;</b>
+                        <span class="status noOk"></span>  
+                        <b>DRIVE&#10148;</b>
+                        <span class="status noOk"></span> 
+                    </div>
+                    <div id="controles">
+                        <label class="label-botones" for="switch-label">AUTO&#10148;</label>
+                        <div class="switch-button">
+                            <!-- Checkbox -->
+                            <input type="checkbox" name="switch-button" id="switch-label" class="switch-button__checkbox">
+                            <!-- Botón -->
+                            <label for="switch-label" class="switch-button__label"></label>
+                        </div>
+                        <label class="label-botones" for="boton-start">ORIGEN&#10148;</label>
+                        <div class="switch-button">
+                            <!-- Checkbox -->
+                            <input type="checkbox" name="switch-button" id="switch-label" class="switch-button__checkbox">
+                            <!-- Botón -->
+                            <label for="switch-label" class="switch-button__label"></label>
+                        </div>
+                        <label class="label-botones" for="slider-velocidad">VELOCIDAD&#10148;</label>
+                        <input type="range" min="1" max="100" value="50" class="slider" id="slider-velocidad">
+                       	<label id="label-paradas" for="paradas"><b>PARADAS</b></label>
+                        <div id="paradas" class="radio">
+							<input label="1" type="radio" id="parada-1" name="paradas" value="1" checked>
+							<input label="2" type="radio" id="parada-2" name="paradas" value="3">
+							<input label="3" type="radio" id="parada-3" name="paradas" value="5">
+							<input label="4" type="radio" id="parada-4" name="paradas" value="7">
+						</div>
+                    </div>
+                </main>
+            </div>
+            <footer>
+                <d class="contenido-footer">
+
+            <!--  sobre nuestra empresa -->
+                <div class="footer-items">
+                    <h1>Company Name</h1>
+                    <p>Description of any product or motto of the company.</p>
+                </div>
+
+            <!--  enlaces  -->
+                <div class="footer-items">
+                  <h3>Quick Links</h3>
+                  <div class="border1"></div> <!--for the underline -->
+                    <ul>
+                      <a href="#"><li>Home</li></a>
+                      <a href="#"><li>Search</li></a>
+                      <a href="#"><li>Contact</li></a>
+                      <a href="#"><li>About</li></a>
+                    </ul>
+                </div>
+
+            <!--  contacto -->
+                <div class="footer-items">
+                  <h3>Contact us</h3>
+                  <div class="border1"></div>
+                    <ul>
+                      <li><i class="fa fa-map-marker" aria-hidden="true"></i>XYZ, abc</li>
+                      <li><i class="fa fa-phone" aria-hidden="true"></i>123456789</li>
+                      <li><i class="fa fa-envelope" aria-hidden="true"></i>xyz@gmail.com</li>
+                    </ul> 
+                </div>
+              
+            <!--   letra pequena  -->
+              <div class="footer-bottom">
+                Copyright &copy; Food and Burps 2020.
+              </div>
+            </footer>
+    </body>
+</html>
