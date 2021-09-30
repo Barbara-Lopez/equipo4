@@ -65,13 +65,11 @@ function validarContraseña() {
 /*envio de datos a plc*/
 
 function enviarDatos(){
-
     $.ajax({
         type: "POST",
         url: $("#form-controles").attr('action'),
-        data: $("#form-controles").serialize(),
-        success: function(){
-            alert("Ha sido ejecutada la acción.");
-        }
+        data: $("#form-controles").serialize()/*,
+        success: function(){;
+        }*/
     })
 }
