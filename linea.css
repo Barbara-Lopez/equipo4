@@ -1,43 +1,102 @@
-#pot {
-  bottom: 15%;
+#paradas {
+  bottom: 28%;
   position: absolute;
-  -webkit-animation: linear infinite;
-  -webkit-animation-name: run;
-  -webkit-animation-duration: 5s;
-    animation-iteration-count: 3 ;/*cantidad de repeticiones de la animacion*/
+  padding-left: 5%;
+  padding-right: 5%;
 }
-/*@-webkit-keyframes run {
-  0% {
-    left: 0; 
+#paradas img{
+  display: absolute;
+  background-size: auto auto;
 
-  }  
-  25% {
-left: calc(25% - 120px); 
-    animation-play-state: paused;   
-  } 
-     50% {
-left: calc(50% - 120px); 
-    animation-play-state: paused;   
+  width: 100%;
+  height: 100%;
+}
+#pot {
+  
+  position: absolute;
+  bottom: calc(28% - 50px);
+   padding-left: 4%;
+  -webkit-animation: linear alternate;
+  -webkit-animation-name: run;
+  -webkit-animation-duration: 12s;
+  animation-iteration-count: 2 ;/*cantidad de repeticiones de la animacion*/
+}
+/* 5paradas
+@-webkit-keyframes run {
+  0% {
+    left: 0;
   }
-    75% {
-left: calc(75% - 120px); 
-    animation-play-state: paused;   
+  19.2% {
+    left: calc(22.5% - 120px);
+  }
+  25% {
+     left: calc(22.5% - 120px);
+  }
+  44.2% { 
+    left: calc(45% - 120px); 
+  }
+  50% { 
+    left: calc(45% - 120px); 
+  }
+  69.2%{ 
+    left: calc(67.5% - 120px);
+    }
+  75% { 
+    left: calc(67.5% - 120px);
+  }
+  94.2%{
+left: calc(90% - 120px); 
   }
     100% {
-left: calc(100% - 120px); 
-    animation-play-state: paused;   
+left: calc(90% - 120px);  
   }
 }
 */
+/* 4paradas*/
+@-webkit-keyframes run {
+  0% {
+    left: 0;
+  }
+  8.33%
+  {
+    left: 0;
+  }
+  30.55% {
+     left: calc(30% + 4% - 100px);
+  }
+  38.88% {
+    left: calc(30% + 4% - 100px);
+  }
+  61.02%{ 
+    left: calc(60% + 4% - 100px);
+    }
+  69.35% { 
+    left: calc(60% + 4% - 100px);
+  }
+  91.58%{
+left: calc(90% + 4% - 100px); 
+  }
+    100% {
+left: calc(90% + 4% - 100px);  
+  }
+}
+
+/*
  @-webkit-keyframes run {
   0% {
     left: 0;
+  }
+  19.2 % {
+    left: calc((90% - 100px)/4);
+  }
+  13*100/52 % {
+    left: calc((90% - 100px)/4);
   }
   48% {
     -webkit-transform: rotateY(0deg); 
   }
   50% { 
-    left: calc(100% - 100px);
+    left: calc(90% - 100px);
     -webkit-transform: rotateY(180deg); 
   }
   98% {
@@ -47,5 +106,7 @@ left: calc(100% - 120px);
     left: 0;    
      -webkit-transform: rotateY(0deg);
   }
-}
+}*/
+/* 19.23
+5,76
 */
