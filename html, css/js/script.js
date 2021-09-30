@@ -53,11 +53,25 @@ function validarContraseña() {
     regPasswd=new RegExp("^[0-9]{1,}$")
     if (regPasswd.test(passwd)) 
     {
-        alert("Usuario y contraseña valido")
         window.location="../index.html";
 
     }
     else 
        alert("El usuario o la contaseña no es correcta");
       
+}
+
+
+/*envio de datos a plc*/
+
+function enviarDatos(){
+
+    $.ajax({
+        type: "POST",
+        url: $("#form-controles").attr('action'),
+        data: $("#form-controles").serialize(),
+        success: function(){
+            alert("Ha sido ejecutada la acción.");
+        }
+    })
 }
