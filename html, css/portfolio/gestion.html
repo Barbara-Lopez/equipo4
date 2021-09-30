@@ -47,28 +47,28 @@
                             <label class="label-botones" for="switch-label-auto">AUTO&#10148;</label>
                             <div class="switch-button">
                                 <!-- Checkbox -->
-                                <input type="checkbox" name='"DB_Webekoekin_Interfazea".AUTO' id="switch-label-auto" class="switch-button__checkbox" onclick="document.getElementById('form-controles').submit();">
+                                <input type="checkbox" name='"DB_Webekoekin_Interfazea".AUTO' id="switch-label-auto" class="switch-button__checkbox" onclick="enviarDatos()">
                                 <!-- Botón -->
                                 <label for="switch-label-auto" class="switch-button__label"></label>
                             </div>
                             <label class="label-botones" for="switch-label-manual">MANUAL&#10148;</label>
                             <div class="switch-button">
                                 <!-- Checkbox -->
-                                <input type="checkbox" name='"DB_Webekoekin_Interfazea".MANUAL'id="switch-label-manual" class="switch-button__checkbox" onclick="document.getElementById('form-controles').submit();">
+                                <input type="checkbox" name='"DB_Webekoekin_Interfazea".MANUAL'id="switch-label-manual" class="switch-button__checkbox" onclick="enviarDatos()">
                                 <!-- Botón -->
                                 <label for="switch-label-manual" class="switch-button__label"></label>
                             </div>
                             <label class="label-botones" for="switch-label-velocidad">ORIGEN&#10148;</label>
                             <div class="switch-button">
                                 <!-- Checkbox -->
-                                <input type="checkbox" name='"DB_Webekoekin_Interfazea".ORIGEN' id="switch-label-velocidad" class="switch-button__checkbox" onclick="document.getElementById('form-controles').submit();">
+                                <input type="checkbox" name='"DB_Webekoekin_Interfazea".ORIGEN' id="switch-label-velocidad" class="switch-button__checkbox" onclick="enviarDatos()">
                                 <!-- Botón -->
                                 <label for="switch-label-velocidad" class="switch-button__label"></label>
                             </div>
                             <label class="label-botones" for="slider-velocidad">VELOCIDAD&#10148;</label>
                             <input type="range" min="1" max="100" value="50" class="slider" id="slider-velocidad" name='"DB_Webekoekin_Interfazea".POSICION_DESTINO'>
                            	<label id="label-paradas" for="paradas"><b>PARADAS</b></label>
-                            <div id="paradas" class="radio" onclick="document.getElementById('form-controles').submit();">
+                            <div id="paradas" class="radio" onclick="enviarDatos()">
     							<input label="1" type="radio" id="parada-1" name="paradas" value="1" checked>
     							<input label="2" type="radio" id="parada-2" name="paradas" value="3">
     							<input label="3" type="radio" id="parada-3" name="paradas" value="5">
