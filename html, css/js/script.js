@@ -61,46 +61,42 @@ function validarContraseña() {
       
 }
 
-/*serialize mejorado para checkboxes sin marcar */
-$ji.fn.extend({
-    serializeArray: function () {
-        //Important: Get the results as you normally would...
-        var results = _serializeArray.call(this);
-
-        //Now, find all the checkboxes and append their "checked" state to the results.
-        this.find('input[type=checkbox]').each(function (id, item) {
-            var $item = $ji(item);
-            var item_value = $item.is(":checked") ? 1 : 0;
-            var item_name = $item.attr('name');
-            var result_index = null;
-            results.each(function (data, index) {
-                if (data.name == item_name) {
-                    result_index = index;
-                }
-            });
-
-            if (result_index != null) {
-                // FOUND replace previous value
-                results[result_index].value = item_value;
-            }
-            else {
-                // NO value has been found add new one
-                results.Push({name: item_name, value: item_value});
-            }
-        });
-        return results;
-    }
-});
 
 
 
-
-/*envio de datos a plc*/
+/*envio de datos a plc INCLUIDOS CHECKBOXES A FALSE*/
 
 function enviarDatos(){
+    var $form = $('#form-controles').clone();
+
+    //find the checkboxes
+    var $checkboxes = $form.find('input[type=checkbox]');
+
+    //loop through the checkboxes and change to hidden fields
+    $checkboxes.each(function() {
+        if ($(this)[0].checked) {
+            $(this).attr('type', 'hidden');
+            $(this).val(1);
+        } else {
+            $(this).attr('type', 'hidden');
+            $(this).val(0);
+        }
+    });
+
     $.ajax({
         type: "POST",
-        url: $("#form-controles").attr('action'),
-        data: $("#form-controles").serialize()
+        url: $("#form").attr('action'),
+        data: $form.serialize()
     })
 }
+
+
+$(document).ready(function(){
+    $.ajaxSetup({cache:false});
+setInterval(function(){
+    $.get("leer_variables.html", function(result){
+            Console.log(result)
+            $("#etiqueta").text(result.trim())
+    })
+}, 1000)
+})
