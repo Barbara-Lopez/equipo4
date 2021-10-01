@@ -9,7 +9,7 @@
         <title>Document</title>
         <link rel="stylesheet" type="text/css" href="css/css.css">
         
-        
+        <link rel="stylesheet" type="text/css" href="css/animaciones.css">
     </head>
     <body >
         <div id="contenedor">
@@ -28,13 +28,19 @@
                 </nav>
                 <script src="js/script.js"></script>
                 <main id="main">
-
-                    <h2>Titulo</h2>
+                    <button type="button" id="iniciar" onclick="animaciones()">iniciar</button>
+                    
+                    <h2>prueba animacion auto</h2>
+                    <p>esta prueba esta en modo automatico sin terminar</p>
                     <div id="paradas">
                       <img class="parada" src="img/paradasinpuntosblancos.png "  > 
-                      <img class="tren" src="img/tren.png" width=100px height=100px> 
-                      <!--con tamaño fijo-->
+                  
+                  <div id="movimiento">
+                      <img id="tren" src="img/tren.png" > 
+                      <!--animacion aplicada a esta imagen-->
                     </div>
+                    </div>
+                    <script src="js/animaciontren.js"></script>
                 </main>
             </div>
             <footer>

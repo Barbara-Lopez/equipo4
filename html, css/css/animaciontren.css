@@ -1,0 +1,134 @@
+/* 
+codigoc css para el funcionamiento de la animacion
+*/
+    /*botton*/
+#contenido #main>button{
+
+    
+}
+/*imagenes*/
+#paradas {
+ padding-left: 1%;
+  bottom: 28%;
+}
+
+#paradas img.parada{
+ padding-left: 1%;
+  width: 95%;
+  height: 95%;
+  bottom: 28%;
+}
+
+#movimiento {
+
+margin-left: 1%;
+  bottom: calc(28%);
+}
+ #movimiento img#tren {
+    display: inline-block;
+position: relative;
+margin-left: 1.5%;
+ width: 5%;
+  height: 5%;
+  -webkit-transform: rotateY(180deg); 
+  -webkit-animation: runderecha 12s ; /*cantidad de repeticiones de la animacion*/
+  -webkit-animation-play-state: running;
+  animation-play-state: running; 
+}
+#movimiento img#tren.pausa{
+
+    -webkit-animation-play-state:paused;
+    -moz-animation-play-state:paused;
+    -o-animation-play-state:paused; 
+    animation-play-state:paused;
+}
+/*animacion automatica del tren a boton*/
+@-webkit-keyframes runderecha {
+  0% {
+    left: 0;
+  }
+  4.165%
+  {
+    left: 0;
+  }
+  15.275% {
+     left: calc(30%);
+  }
+  19.44% {
+    left: calc(30%  );
+  }
+  30.51%{ 
+    left: calc(59% );
+    }
+  34.675% { 
+    left: calc(59%  );
+  }
+  45.79%{
+left: calc(87%  ); 
+-webkit-transform: rotateY(180deg); 
+  }
+
+  50% {
+    left: calc(87%  ); 
+     -webkit-transform: rotateY(0deg);
+  }
+
+  54.165%
+  {
+   left: calc(87%  ); 
+  }
+  65.275 {
+     left: calc(59%);
+  }
+ 69.44%{
+    left: calc(59%  );
+  }
+  80.51%{ 
+    left: calc(30% );
+    }
+  84.675% { 
+    left: calc(30%  );
+  }
+ 95.79%{
+    left: 0;
+-webkit-transform: rotateY(0deg); 
+  }
+
+  100% {
+    left: 0; 
+     -webkit-transform: rotateY(180deg);
+  }
+    
+}
+@-webkit-keyframes ir_derecha {
+  0% {
+    left: 0;
+  }
+  10.%
+  {
+    left: 0;
+  }
+  90% {
+    left: calc(30%  );
+}
+  100% {
+     left: calc(30%  );
+ 
+  }  
+}
+@-webkit-keyframes ir_izquierda {
+  0% {
+    right: 0;
+  }
+  10.%
+  {
+    right: 0;
+  }
+  90% {
+    right: calc(30%  );
+}
+  100% {
+     right: calc(30%  );
+ 
+  }  
+}
