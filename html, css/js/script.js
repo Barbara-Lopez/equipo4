@@ -65,15 +65,16 @@ function validarContraseña() {
 /*envio de datos a plc*/
 
 function enviarDatos(){
-    $.ajax({
-        type: "POST",
-        url: $("#form-controles").attr('action'),
-        data: $("#form-controles").serialize(),
-        data: data.concat(
+    values = $("#form-controles").serialize()
+    values = values.concat(
             jQuery('#form-controles input[type=checkbox]:not(:checked)').map(
                     function() {
                         return {"name": this.name, "value": false}
                     }).get()
-        )
+    ); 
+    $.ajax({
+        type: "POST",
+        url: $("#form-controles").attr('action'),
+        data: values
     })
 }
