@@ -8,8 +8,7 @@
         <link rel="icon" type="image/x-icon" href="img/logotipo.png">
         <title>Document</title>
         <link rel="stylesheet" type="text/css" href="css/css.css">
-        
-        <link rel="stylesheet" type="text/css" href="css/animaciones.css">
+        <link rel="stylesheet" type="text/css" href="css/animaciontren.css">
     </head>
     <body >
         <div id="contenedor">
@@ -28,15 +27,21 @@
                 </nav>
                 <script src="js/script.js"></script>
                 <main id="main">
-                    <button type="button" id="iniciar" onclick="animaciones()">iniciar</button>
+                     <!--boton para iteractuar la aminacion full auto-->
+                    <button type="button" id="iniciar" value="parado" onclick="animaciontotal()">Iniciar Animacion</button>
                     
                     <h2>prueba animacion auto</h2>
                     <p>esta prueba esta en modo automatico sin terminar</p>
                     <div id="paradas">
+                    <button type="button" class="paradas" value="1" >Parada 1</button> 
+                    <button type="button" class="paradas" value="2" >Parada 2</button> 
+                    <button type="button" class="paradas" value="3" >Parada 3</button> 
+                    <button type="button" class="paradas" value="4" >Parada 4</button>
+
                       <img class="parada" src="img/paradasinpuntosblancos.png "  > 
                   
                   <div id="movimiento">
-                      <img id="tren" src="img/tren.png" > 
+                      <img id="tren" src="img/tren.png" value="0" class="pausa" > 
                       <!--animacion aplicada a esta imagen-->
                     </div>
                     </div>

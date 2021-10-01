@@ -1,10 +1,65 @@
 /* 
 codigoc css para el funcionamiento de la animacion
 */
-    /*botton*/
-#contenido #main>button{
+    /*bottones*/
 
-    
+button#iniciar{
+  
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+    padding: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: helvetica;
+    font-weight: 300;
+    font-size: 25px;
+    font-style: italic;
+    color: #006505;
+    background-color: #82b085;
+    border-radius: 0.45em;
+    border: 0.15em double #006505;
+  }
+button#iniciar:hover{
+    opacity: 0.6;
+    text-decoration: none;
+  }
+#paradas
+{
+
+display: grid;
+  grid-template-columns: 4, 20%;
+  grid-template-rows: 4, 20%;
+  align-content: space-around;
+  justify-items: stretch;
+  grid-gap: 3%;
+  grid-template-areas:
+    "a a a a"
+    "b b b b"
+    "c c c c";
+}
+button.paradas{
+display: inline-grid;
+align-content: space-between;
+  justify-content: space-around;
+
+    padding: 1%;
+    padding-left: 2%;
+    padding-right: 2%;
+    font-family: helvetica;
+    font-size: 150%;
+    font-style: italic;
+    text-align: center;
+    color: #006505;
+    background-color: #589943;
+    border-radius: 0.45em;
+    border: 0.15em double transparent;
+}
+button.paradas:hover{
+   border: 0.15em double #006505;
+  background-color: transparent;
+ opacity: 0.6;
+
 }
 /*imagenes*/
 #paradas {
@@ -17,23 +72,25 @@ codigoc css para el funcionamiento de la animacion
   width: 95%;
   height: 95%;
   bottom: 28%;
+  grid-area: b;
 }
+#movimiento{
+  grid-area: c;
+    grid-row: all;
+}
+#movimiento img#tren {
 
-#movimiento {
-
-margin-left: 1%;
+  margin-left: 1%;
   bottom: calc(28%);
-}
- #movimiento img#tren {
     display: inline-block;
 position: relative;
 margin-left: 1.5%;
- width: 5%;
-  height: 5%;
+  width: 5%;
   -webkit-transform: rotateY(180deg); 
-  -webkit-animation: runderecha 12s ; /*cantidad de repeticiones de la animacion*/
-  -webkit-animation-play-state: running;
-  animation-play-state: running; 
+
+-webkit-animation: runderecha 12s infinite; /*cantidad de repeticiones de la animacion*/
+-webkit-animation-play-state: running;
+animation-play-state: running; 
 }
 #movimiento img#tren.pausa{
 
@@ -132,3 +189,4 @@ left: calc(87%  );
  
   }  
 }
+/*fin codigo css */
