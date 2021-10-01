@@ -94,8 +94,16 @@ function enviarDatos(){
 $(document).ready(function(){
     $.ajaxSetup({cache:false});
 setInterval(function(){
-    $.get("leer_variables.html", function(result){
-            Console.log(result)
+    valores = new Map()
+    $.get("../portfolio/leer_variables.html", function(result) {
+            datos = result.split(result, "|")
+            for(i = 0; i < datos.length; i+=2){
+                valores.set("variable", datos[i])
+                valores.set("valor", datos[i+1])
+            }
+            valores.forEach((variable,clave)=> {
+                console.log(`la clave es ${valores.get(variable)} y el valor asociado es ${valores.get(valor)}`);
+            })
             $("#etiqueta").text(result.trim())
     })
 }, 1000)
