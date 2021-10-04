@@ -108,3 +108,37 @@ setInterval(function(){
     })
 }, 1000)
 })
+
+/* Contacto */
+
+function enviarContacto(){
+    let nombre=document.getElementById('nombre').value;
+    let correo=document.getElementById('correo').value;
+    let asunto=document.getElementById('asunto').value;
+    let descripcion=document.getElementById('descripcion').value;
+    let regNombre=new RegExp("^[A-Za-z0-9]{1,}@[A-Za-z]{0,}.[a-z]{1,3}$")
+    if(nombre.length==0 || correo.length==0 || asunto.length==0 || descripcion.length==0 )
+        swal("No se puede dejar ningun campo vacio", {icon: "info",})
+    else{
+        
+        if (!regNombre.test(correo)){
+            swal("El apartado de correo electronico no tiene la estructura de un correo", {icon: "info",})
+        }
+        else{
+            swal({
+                title: "Estas seguro?",
+                text: "Una vez que le des a 'OK' se enviará",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+            .then((willDelete) => {
+                if (willDelete) {
+                swal("Se ha enviado correctamente", {
+                    icon: "success",
+                });
+                } 
+            });
+        }
+    }
+ }

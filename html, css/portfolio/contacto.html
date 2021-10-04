@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="../img/logotipo.png">
+        <title>Document</title>
+        <link rel="stylesheet" type="text/css" href="../css/css.css">
+        <script src="../js/script.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    </head>
+    <body >
+        <div id="contenedor">
+            
+            <header>
+                <img id="logo-principal" src="../img/logotipo.png" alt="trebureus">
+                <h1 id="titulo">Titulo</h1>
+            </header>
+            <div id="contenido">
+                <span id="boton-menu" style="font-size:2em;cursor:pointer" onclick="actionNav()">&#9776;</span>
+                <nav id="sidenav">
+                    <ul>
+                        <li><a href="login.html">Login</a></li>
+                        <li><a href="portfolio/gestion.html">Gesti&oacute;n</a></li>
+                        <li><a href="portfolio/contacto.html">Contacto</a></li>
+                    </ul>
+                </nav>
+                
+                <main id="main">
+                    <h2>Titulo</h2>
+                    <form id="form-contacto" action="contacto.html" method="post">
+                        <label for="nombre">Nombre de la persona</label>
+                        <input type="text" name="nombre" id="nombre">
+                        <label for="correo">Correo electronico</label>
+                        <input type="text" name="correo" id="correo">
+                        <label for="asunto">Asunto</label>
+                        <input type="text" name="asunto" id="asunto" value="Nombre del asunto">
+                        <textarea name="asuntoDescripcion" id="descripcion" cols="30" rows="10">Información sobre el asunto</textarea>
+                        <button type="submit" value="Enviar" onclick="enviarContacto()"></button> > 
+                    </form>
+                    
+                </main>
+            </div>    
+               
+            <footer>
+                <d class="contenido-footer">
+
+            <!--  sobre nuestra empresa -->
+                <div class="footer-items">
+                    <h1>Company Name</h1>
+                    <p>Description of any product or motto of the company.</p>
+                </div>
+
+            <!--  enlaces  -->
+                <div class="footer-items">
+                  <h3>Quick Links</h3>
+                  <div class="border1"></div> <!--for the underline -->
+                    <ul>
+                      <a href="#"><li>Home</li></a>
+                      <a href="#"><li>Search</li></a>
+                      <a href="#"><li>Contact</li></a>
+                      <a href="#"><li>About</li></a>
+                    </ul>
+                </div>
+
+            <!--  contacto -->
+                <div class="footer-items">
+                  <h3>Contact us</h3>
+                  <div class="border1"></div>
+                    <ul>
+                      <li><i class="fa fa-map-marker" aria-hidden="true"></i>XYZ, abc</li>
+                      <li><i class="fa fa-phone" aria-hidden="true"></i>123456789</li>
+                      <li><i class="fa fa-envelope" aria-hidden="true"></i>xyz@gmail.com</li>
+                    </ul> 
+                </div>
+              
+            <!--   letra pequena  -->
+              <div class="footer-bottom">
+                Copyright &copy; Food and Burps 2020.
+              </div>
+            </footer>
+        </div>
+    </body>
+</html>

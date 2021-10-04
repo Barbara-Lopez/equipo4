@@ -146,20 +146,26 @@ header>a:hover{
     padding: 0.5em;
     padding-top: 2em;
 }
+
+
 /*codigo formulario*/
-#contenido #main form{
+#contenido #main #form-contacto{
     width: 100%;
     padding: 10% 20%;
 
 }
-#contenido #main form>input{
+#contenido #main form input, textarea{
     width: 100%;
     padding: 1em 1.7em;
     margin: 0.7em 0;
-    display: inline-block;
     border: 1px solid #ccc;
     border-radius: 0.3em;
   }
+
+  #contenido #main .tg-wrap{
+    text-align: center;
+  }
+
 
 
 /* Pie de pagina */
@@ -244,6 +250,7 @@ footer {
 /*boxes que albergan los controles y pilotos del automata*/
 
 #pilotos, #controles{ 
+    text-align: center;
     padding: 2em;
     float: left;
     width: 100%;
@@ -253,8 +260,15 @@ footer {
     border-radius: 1em;
     align-items: center;
 }
-#controles #form-controles input, label{
-     width: 25%;
+#contenido #main #controles #tabla-controles{
+    width: 100%;
+    text-align: center;
+}
+#contenido #main #controles #form-controles input, label{
+     width: 24%;
+}
+#contenido #main #controles #form-controles #slider-velocidad{
+     width: 100%;
 }
 #pilotos{
     display: grid;
