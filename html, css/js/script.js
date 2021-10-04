@@ -1,9 +1,43 @@
-/*
-     var pequeñoReso=window.matchMedia("(max-width: 315px)");
-     if(pequeñoReso.matches){
-        document.getElementById("titulo").style.display = "none";
-    }
-*/
+$(document).ready(function(){
+    $.ajaxSetup({cache:false});
+setInterval(function(){
+    actualizarVariables()
+    actualizarVisu()
+}, 1000)
+})
+
+
+/*refresca el valor de las variables, pero solo en memoria, no en la visu*/
+function actualizarVariables(){
+    var variables = new Array()
+    $.get("../portfolio/leer_variables.html", function(result) {
+            datos = result.split("|")
+            for(i = 0; i < datos.length-1; i= i+2){
+                variable = new Map()
+                variable.set("nombre-variable", datos[i])
+                variable.set("valor", datos[i+1])
+                variables.push(variable)
+            }
+
+    })
+}
+
+
+function actualizarVisu(){
+    variables.forEach( variable => function{
+        nombre = "piloto-" + variable.get("nombre-variable")
+        piloto = document.getElementById(nombre.toLowerCase())
+        if(variable.get("valor")==0){
+            piloto.className="status.noOk"
+        }
+        else{
+            piloto.className="status.Ok"
+        }
+    })
+}
+
+
+/*codigo del menu de navegacion desplegable*/
 function actionNav(){
     var mobileReso = window.matchMedia("(max-width: 550px)")
     var tabletReso = window.matchMedia("(max-width: 768px)")
@@ -90,24 +124,6 @@ function enviarDatos(){
     })
 }
 
-
-$(document).ready(function(){
-    $.ajaxSetup({cache:false});
-setInterval(function(){
-    valores = new Map()
-    $.get("../portfolio/leer_variables.html", function(result) {
-            datos = result.split(result, "|")
-            for(i = 0; i < datos.length; i+=2){
-                valores.set("variable", datos[i])
-                valores.set("valor", datos[i+1])
-            }
-            valores.forEach((variable,clave)=> {
-                console.log(`la clave es ${valores.get(variable)} y el valor asociado es ${valores.get(valor)}`);
-            })
-            $("#etiqueta").text(result.trim())
-    })
-}, 1000)
-})
 
 /* Contacto */
 

@@ -39,83 +39,53 @@
                 <main id="main">
                     <div id="pilotos">
                         <b>SEMAFORO&#10148;</b>
-                        <span class="status noOk"></span>
+                        <span id="piloto-semaforo" class="status noOk"></span>
                         <b>INP&#10148;</b>
-                        <span class="status noOk"></span>  
+                        <span  id="piloto-inp" class="status noOk"></span>  
                         <b>DRIVE&#10148;</b>
-                        <span class="status noOk"></span> 
+                        <span id="piloto-drive" class="status noOk"></span>
+                        <b>ZUMBADOR&#10148;</b>
+                        <span id="piloto-zumbador" class="status noOk"></span>
                     </div>
                     <div id="controles">
                         <form method="post" id="form-controles">
-                            <div class="tg-wrap">
-                            <table id="tabla-controles">
-                            <tbody>
-                              <tr>
-                                <td>
-                                    <label class="label-botones" for="switch-label-auto">AUTO&#10148;</label>
-                                    <div class="switch-button">
-                                        <!-- Checkbox -->
-                                        <input type="checkbox" name='"DB_Webekoekin_Interfazea".AUTO' id="switch-label-auto" class="switch-button__checkbox" onclick="enviarDatos()">
-                                        <!-- Botón -->
-                                        <label for="switch-label-auto" class="switch-button__label"></label>
-                                    </div>
-                                </td>
-                                <td>
-                                    <label class="label-botones" for="switch-label-manual">MANUAL&#10148;</label>
-                                    <div class="switch-button">
-                                        <!-- Checkbox -->
-                                        <input type="checkbox" name='"DB_Webekoekin_Interfazea".MAN'id="switch-label-manual" class="switch-button__checkbox" onclick="enviarDatos()">
-                                        <!-- Botón -->
-                                        <label for="switch-label-manual" class="switch-button__label"></label>
-                                    </div>
-                                </td>
-                                <td>
-                                    <label class="label-botones" for="switch-label-origen">ORIGEN&#10148;</label>
-                                    <div class="switch-button">
-                                        <!-- Checkbox -->
-                                        <input type="checkbox" name='"DB_Webekoekin_Interfazea".ORIGEN' id="switch-label-velocidad" class="switch-button__checkbox" onclick="enviarDatos()">
-                                        <!-- Botón -->
-                                        <label for="switch-label-velocidad" class="switch-button__label"></label>
-                                    </div>
-                                </td>
-                                <td>
-                                    <label class="label-botones" for="switch-label-origen">MARTXA&#10148;</label>
-                                    <div class="switch-button">
-                                        <!-- Checkbox -->
-                                        <input type="checkbox" name='"DB_Webekoekin_Interfazea".MARTXA' id="switch-label-velocidad" class="switch-button__checkbox" onclick="enviarDatos()">
-                                        <!-- Botón -->
-                                        <label for="switch-label-martxa" class="switch-button__label"></label>
-                                    </div>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td colspan="4">
-                                    <label class="label-botones" for="slider-velocidad">VELOCIDAD</label>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td colspan="4">
-                                    <input id="slider-velocidad" type="range" min="1" max="100" value="50" class="slider" id="slider-velocidad" name='"DB_Webekoekin_Interfazea".VELOCIDAD_MANUAL' onclick="enviarDatos()">
-                                </td>
-                              </tr>
-                              <tr>
-                                <td colspan="4">
-                                    <label id="label-paradas" for="paradas"><b>PARADAS</b></label>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td colspan="4">
-                                    <div id="paradas" class="radio">
-                                        <input label="1" type="radio" id="parada-1" name='"DB_Webekoekin_Interfazea".POSICION_DESTINO' value="1" checked>
-                                        <input label="2" type="radio" id="parada-2" name='"DB_Webekoekin_Interfazea".POSICION_DESTINO'  value="3">
-                                        <input label="3" type="radio" id="parada-3" name='"DB_Webekoekin_Interfazea".POSICION_DESTINO'  value="5">
-                                        <input label="4" type="radio" id="parada-4" name='"DB_Webekoekin_Interfazea".POSICION_DESTINO' value="7">
-                                    </div>
-                                </td>
-                              </tr>
-                            </tbody>
-                            </table>
-                        </div>
+                            <label class="label-botones" for="switch-label-auto">AUTO&#10148;</label>
+                            <div class="switch-button">
+                                <!-- Checkbox -->
+                                <input type="checkbox" name='"DB_Webekoekin_Interfazea".AUTO' id="switch-label-auto" class="switch-button__checkbox" onclick="enviarDatos()">
+                                <!-- Botón -->
+                                <label for="switch-label-auto" class="switch-button__label"></label>
+                            </div>
+                            <label class="label-botones" for="switch-label-manual">MANUAL&#10148;</label>
+                            <div class="switch-button">
+                                <!-- Checkbox -->
+                                <input type="checkbox" name='"DB_Webekoekin_Interfazea".MAN'id="switch-label-manual" class="switch-button__checkbox" onclick="enviarDatos()">
+                                <!-- Botón -->
+                                <label for="switch-label-manual" class="switch-button__label"></label>
+                            </div>
+                            <label class="label-botones" for="switch-label-origen">ORIGEN&#10148;</label>
+                            <div class="switch-button">
+                                <!-- Checkbox -->
+                                <input type="checkbox" name='"DB_Webekoekin_Interfazea".ORIGEN' id="switch-label-velocidad" class="switch-button__checkbox" onclick="enviarDatos()">
+                                <!-- Botón -->
+                                <label for="switch-label-velocidad" class="switch-button__label"></label>
+                            </div> 
+                            <label class="label-botones" for="switch-label-origen">MARTXA&#10148;</label>
+                            <div class="switch-button">
+                                <!-- Checkbox -->
+                                <input type="checkbox" name='"DB_Webekoekin_Interfazea".MARTXA' id="switch-label-velocidad" class="switch-button__checkbox" onclick="enviarDatos()">
+                                <!-- Botón -->
+                                <label for="switch-label-martxa" class="switch-button__label"></label>
+                            </div>
+                            <label id="label-slider" class="label-botones" for="slider-velocidad">VELOCIDAD</label> 
+                            <input id="slider-velocidad" type="range" min="1" max="100" value="50" class="slider" name='"DB_Webekoekin_Interfazea".VELOCIDAD_MANUAL' onclick="enviarDatos()">       
+                            <label id="label-paradas" for="paradas"><b>PARADAS</b></label>
+                            <div id="paradas" class="radio">
+                                <input label="1" type="radio" id="parada-1" name='"DB_Webekoekin_Interfazea".POSICION_DESTINO' value="1" checked>
+                                <input label="2" type="radio" id="parada-2" name='"DB_Webekoekin_Interfazea".POSICION_DESTINO'  value="3">
+                                <input label="3" type="radio" id="parada-3" name='"DB_Webekoekin_Interfazea".POSICION_DESTINO'  value="5">
+                                <input label="4" type="radio" id="parada-4" name='"DB_Webekoekin_Interfazea".POSICION_DESTINO' value="7">
+                            </div>
                         </form>
                     </div>
                 </main>

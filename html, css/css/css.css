@@ -66,6 +66,7 @@ header>a:hover{
 
 /* Cuerpo */
 #contenido{
+    overflow-x: scroll;
     background-color: #F0EBEB;
     float: left;
     padding-top: 1em;
@@ -260,27 +261,41 @@ footer {
     border-radius: 1em;
     align-items: center;
 }
-#contenido #main #controles #tabla-controles{
-    width: 100%;
-    text-align: center;
+
+#pilotos{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-auto-flow: row;
+}
+#contenido #main #controles #form-controles{
+    margin: 0 auto;
+    width: 70%;
+    text-align: right;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-auto-flow: row;
+    grid-column-gap: 1em;
+    align-items: center;
 }
 #contenido #main #controles #form-controles input, label{
      width: 24%;
 }
 #contenido #main #controles #form-controles #slider-velocidad{
-     width: 100%;
+    width: 100%;
+    grid-column: 1 / 9;
 }
-#pilotos{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-auto-flow: row;
+#contenido #main #controles #form-controles #label-slider{
+    width: 100%;
+    grid-column: 1 / 9;
+    text-align: center;
 }
-
 #paradas{
-    grid-column: 1 / 5;
+    width: 100%;
+    grid-column: 1 / 9;
 }
 #label-paradas{
-    grid-column: 1 / 5;
+    width: 100%;
+    grid-column: 1 / 9;
     text-align: center;
 }
 
@@ -415,19 +430,42 @@ codigo radiobuttons modificados
     footer .footer-items{
         width: 100%;
     }
-    #contenido #main #controles{
+    #contenido #main #pilotos{
         grid-template-columns: 1fr 1fr;
     }
-    #paradas{
+    #contenido #main #controles #form-controles{
+        margin: 0 auto;
+        width: 70%;
+        text-align: right;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-auto-flow: row;
+    }
+    #contenido #main #controles #form-controles input, label{
+         width: 24%;
+    }
+    #contenido #main #controles #form-controles #slider-velocidad{
+        width: 100%;
         grid-column: 1 / 3;
     }
-    #label-paradas{
+    #contenido #main #controles #form-controles #label-slider{
+        width: 100%;
         grid-column: 1 / 3;
         text-align: center;
     }
-    #main #controles .radio input{
+    #paradas{
+        width: 100%;
+        grid-column: 1 / 3;
+    }
+    #label-paradas{
+        width: 100%;
+        grid-column: 1 / 3;
+        text-align: center;
+    }
+    #contenido #main #controles #form-controles .radio input{
         width: 23%;
     }
+
 
 }
 
@@ -442,6 +480,41 @@ codigo radiobuttons modificados
     }
     footer .footer-items{
         width: 100%;
+    }
+    #contenido #main #pilotos{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    #contenido #main #controles #form-controles{
+        margin: 0 auto;
+        width: 70%;
+        text-align: right;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-auto-flow: row;
+    }
+    #contenido #main #controles #form-controles input, label{
+         width: 24%;
+    }
+    #contenido #main #controles #form-controles #slider-velocidad{
+        width: 100%;
+        grid-column: 1 / 5;
+    }
+    #contenido #main #controles #form-controles #label-slider{
+        width: 100%;
+        grid-column: 1 / 5;
+        text-align: center;
+    }
+    #paradas{
+        width: 100%;
+        grid-column: 1 / 5;
+    }
+    #label-paradas{
+        width: 100%;
+        grid-column: 1 / 5;
+        text-align: center;
+    }
+    #contenido #main #controles #form-controles .radio input{
+        width: 23%;
     }
 }
 
