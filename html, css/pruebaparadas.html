@@ -27,25 +27,27 @@
                 </nav>
                 <script src="js/script.js"></script>
                 <main id="main">
+                    <!--inicio de modificacion de la aminacion full auto-->
                      <!--boton para iteractuar la aminacion full auto-->
                     <button type="button" id="iniciar" value="parado" onclick="animaciontotal()">Iniciar Animacion</button>
                     
                     <h2>prueba animacion auto</h2>
                     <p>esta prueba esta en modo automatico sin terminar</p>
                     <div id="paradas">
-                    <button type="button" class="paradas" value="1" >Parada 1</button> 
-                    <button type="button" class="paradas" value="2" >Parada 2</button> 
-                    <button type="button" class="paradas" value="3" >Parada 3</button> 
-                    <button type="button" class="paradas" value="4" >Parada 4</button>
+                    <button type="button" class="paradas" value="1" onclick="moveraparada(this.value)">Parada 1</button> 
+                    <button type="button" class="paradas" value="2" onclick="moveraparada(this.value)">Parada 2</button> 
+                    <button type="button" class="paradas" value="3" onclick="moveraparada(this.value)">Parada 3</button> 
+                    <button type="button" class="paradas" value="4" onclick="moveraparada(this.value)">Parada 4</button>
 
                       <img class="parada" src="img/paradasinpuntosblancos.png "  > 
                   
                   <div id="movimiento">
-                      <img id="tren" src="img/tren.png" value="0" class="pausa" > 
+                      <img id="tren" src="img/tren.png" class=""  value="1" > 
                       <!--animacion aplicada a esta imagen-->
                     </div>
                     </div>
                     <script src="js/animaciontren.js"></script>
+                    <!--fin de modificacion de la aminacion full auto-->
                 </main>
             </div>
             <footer>

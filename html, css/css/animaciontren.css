@@ -6,11 +6,10 @@ codigoc css para el funcionamiento de la animacion
 button#iniciar{
   
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-    padding: 3px;
-    padding-left: 10px;
-    padding-right: 10px;
+  margin: 0 auto;
+        text-align: center;
+    width: 30%;
+  height: 95%;
     font-family: helvetica;
     font-weight: 300;
     font-size: 25px;
@@ -39,10 +38,13 @@ display: grid;
     "c c c c";
 }
 button.paradas{
+  margin: 0 auto;
+        text-align: center;
 display: inline-grid;
 align-content: space-between;
   justify-content: space-around;
-
+width: 95%;
+  height: 95%;
     padding: 1%;
     padding-left: 2%;
     padding-right: 2%;
@@ -88,7 +90,10 @@ margin-left: 1.5%;
   width: 5%;
   -webkit-transform: rotateY(180deg); 
 
--webkit-animation: runderecha 12s infinite; /*cantidad de repeticiones de la animacion*/
+
+}
+#movimiento img#tren.inicio{
+-webkit-animation: runauto 12s  infinite; /*cantidad de repeticiones de la animacion*/
 -webkit-animation-play-state: running;
 animation-play-state: running; 
 }
@@ -100,7 +105,7 @@ animation-play-state: running;
     animation-play-state:paused;
 }
 /*animacion automatica del tren a boton*/
-@-webkit-keyframes runderecha {
+@-webkit-keyframes runauto {
   0% {
     left: 0;
   }
@@ -120,7 +125,7 @@ animation-play-state: running;
   34.675% { 
     left: calc(59%  );
   }
-  45.79%{
+  45.79% {
 left: calc(87%  ); 
 -webkit-transform: rotateY(180deg); 
   }
@@ -157,13 +162,19 @@ left: calc(87%  );
   }
     
 }
+/*animaciones manuales*/
 @-webkit-keyframes ir_derecha {
   0% {
     left: 0;
   }
+  0.1% {
+    left: 0;
+    -webkit-transform: rotateY(0deg);
+  }
   10.%
   {
     left: 0;
+    -webkit-transform: rotateY(180deg);
   }
   90% {
     left: calc(30%  );
@@ -174,13 +185,19 @@ left: calc(87%  );
   }  
 }
 @-webkit-keyframes ir_izquierda {
-  0% {
+   0% {
     right: 0;
+  }
+  0.1% {
+    right: 0;
+    -webkit-transform: rotateY(180deg);
   }
   10.%
   {
     right: 0;
+    -webkit-transform: rotateY(0deg);
   }
+  
   90% {
     right: calc(30%  );
 }
@@ -189,4 +206,21 @@ left: calc(87%  );
  
   }  
 }
+/*rotaciones en manual*/
+@-webkit-keyframes rotarizq {
+  
+  100% {
+      -webkit-transform: rotateY(0deg);
+ 
+  }  
+}
+@-webkit-keyframes rotarder {
+  
+  100% {
+      -webkit-transform: rotateY(0deg);
+ 
+  }  
+}
+/**/
+
 /*fin codigo css */
