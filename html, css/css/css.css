@@ -160,7 +160,7 @@ header>a:hover{
     padding: 10% 20%;
 
 }
-#contenido #main form input, textarea{
+#contenido #main form button, input, textarea{
     width: 100%;
     padding: 1em 1.7em;
     margin: 0.7em 0;
