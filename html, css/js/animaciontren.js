@@ -3,6 +3,9 @@ var uno = document.getElementById('iniciar') ;
  var tren = document.getElementById('tren');  
 tren.value = 1;
 console.log(tren.value)
+function porcentage(valornormal, valor100) {
+   return (100 * valornormal) / valor100;
+} 
 function animaciontotal()
 {
   tren.classList.toggle('pausa');/*en caso de que tenga esa clase lo quita, sino lo implementa*/
@@ -53,19 +56,19 @@ function moveraparada(destino){
    if (trenecito<destino) {
     cambio="derecha";   
     diferencia= parseInt(destino-trenecito)
+        moverderecha(destino,diferencia)
     document.getElementById('tren').value=destino
-    moverderecha(trenecito,diferencia)
+
    }else  
    if (trenecito>destino) {
     cambio="izquierda";   
     diferencia= parseInt(trenecito-destino)
+    moverizquierda(destino,diferencia)
     document.getElementById('tren').value=destino
-moverizquierda(trenecito,diferencia)
    }
     
     console.log(destino + cambio + diferencia)
-console.log(tren
-  )
+//console.log(tren )
  /*switch(destino)
  case "derecha1":
  case "derecha2":
@@ -74,33 +77,96 @@ console.log(tren
  case "izquierda2":
  case "izquierda3":
 */
-
 }
+/*
 function moverizquierda(destino,cantidad){
   
     //document.getElementById('tren').style.animation = "ir_izquierda 4s "+cantidad;
 //tren.addEventListener("webkitAnimationStart", Animacionizq);
 //tren.addEventListener("webkitAnimationEnd", alAcabarLaAnimacion);
-document.getElementById('tren').animate([ 
-  { right: this+'30%' }, 
-  { right: this+'30%' }
+console.log(tren.value+","+destino)
+console.log(tren.style.left)
+for (var i = tren.value; i > destino; i--) {
+var idniani =porcentage((30*(i-1)),100)+"%"
+var finiani=porcentage((30*(i-1))-30,100)+"%"
+console.log(idniani+","+finiani)
+tren.animate([ 
+  { left: tren.style.left }, 
+  { left: porcentage((30*(i-1))-30,100)+"%" }
 ], {
   duration: 1000,
-  iterations: cantidad
+  iterations: 1
 })
+tren.style.left = porcentage((30*(i-1))-30,100)+"%";
+console.log(tren.style.left)
+}
 }
 function moverderecha(destino,cantidad){
-//document.getElementById('tren').style.WebkitAnimation = "ir_derecha 4s  "+cantidad;
-//tren.addEventListener("webkitAnimationStart", Animacionder);
-//tren.addEventListener("webkitAnimationEnd", alAcabarLaAnimacion);
-document.getElementById('tren').animate([ 
-  { left: this}, 
-  { left: this+'30%' }
-], {
-  duration: 1000,
-  iterations: cantidad
-})
-}
+      //document.getElementById('tren').style.WebkitAnimation = "ir_derecha 4s  "+cantidad;
+      //tren.addEventListener("webkitAnimationStart", Animacionder);
+      //tren.addEventListener("webkitAnimationEnd", alAcabarLaAnimacion);
+      console.log(tren.style.left)
+      for (var i = tren.value; i < destino; i++) {
+        console.log(i)
+        //console.log(idniani+","+finiani)
+        var idniani =porcentage((30*(i-1)),100)+"%"
+        var finiani=porcentage((30*(i-1))+30,100)+"%"
+        console.log(idniani+","+finiani)
+        tren.animate([ 
+          { left: idniani }, 
+          { left: finiani }
+        ], {
+          duration: 1000,
+          iterations: 1
+        })
+        tren.style.left = porcentage((30*(i-1))+30,100)+"%";
+        console.log(tren)
+        console.log(tren.style.left)
+  }
+}*/
+//animacion correcta v1 (de un lado a otro directamente)
+          function moverizquierda(destino,cantidad){
+            
+          //document.getElementById('tren').style.animation = "ir_izquierda 4s "+cantidad;
+          //tren.addEventListener("webkitAnimationStart", Animacionizq);
+          //tren.addEventListener("webkitAnimationEnd", alAcabarLaAnimacion);
+          console.log(tren.value+","+destino)
+          var idniani =porcentage((30*(tren.value-1)),100)+"%"
+          var finiani=porcentage((30*(tren.value-1))-(30*cantidad),100)+"%"
+          var tiempo=1000*cantidad
+          console.log(idniani+","+finiani)
+          document.getElementById('tren').animate([ 
+            { left: idniani }, 
+            { left: finiani }
+          ], {
+            duration: tiempo,
+            iterations: 1
+          })
+          tren.style.left = finiani;
+          }
+          function moverderecha(destino,cantidad){
+          //document.getElementById('tren').style.WebkitAnimation = "ir_derecha 4s  "+cantidad;
+          //tren.addEventListener("webkitAnimationStart", Animacionder);
+          //tren.addEventListener("webkitAnimationEnd", alAcabarLaAnimacion);
+          console.log(tren.value+","+destino)
+          var idniani=porcentage((30*(tren.value-1)),100)+"%"
+          var finiani=porcentage((30*(tren.value-1))+(30*cantidad),100)+"%"
+            var tiempo=1000*cantidad
+          console.log(idniani+","+finiani)
+
+          document.getElementById('tren').animate([ 
+            { left: idniani }, 
+            { left: finiani }
+          ], {
+           
+            duration: tiempo,
+            direction: 'alternate',
+            iterations: 1,
+          })
+          tren.style.left = finiani;
+
+          }
+
 /*animacion portfolio*/
 /*al hacer click en algo, que implemente un atributo*/
 /*
@@ -116,19 +182,26 @@ function alEmpezarLaAnimacion(e) {
 
   }
 */
-//tren.addEventListener("webkitAnimationEnd", alAcabarLaAnimacion);
+tren.addEventListener("webkitAnimationEnd", alAcabarLaAnimacion);
 function alAcabarLaAnimacion(e) {
-   document.getElementById('tren').removeAttribute("style")
+   tren.style.WebkitAnimationPlayState = "running";
 
 
   }
   function Animacionder(e) {
-   document.getElementById('tren').style.animation = "rotarder 0.25s 1";
+   tren.style.left = finiani;
 
 
   }
     function Animacionizq(e) {
-   document.getElementById('tren').style.animation = "rotarizq 0.25s 1";
+   tren.style.left = finiani;
 
-
+  }
+tren.addEventListener("AnimationStart", alEmpezarLaAnimacion, false);
+tren.addEventListener("AnimationIteration", alRepetirLaAnimacion, false);
+function alEmpezarLaAnimacion(e){
+      console.log("La animaci\363n "+ e.animationName+" acaba de empezar");
+}
+function alRepetirLaAnimacion(e) {
+   console.logt ( "La animaci\363n \""+ e.animationName+"\" vuelve a repetirse. Han pasado "+ Number((e.elapsedTime).toFixed(1)) +" segundos.\n");
   }

@@ -92,6 +92,10 @@ margin-left: 1.5%;
 
 
 }
+.rotarizq{
+  -webkit-animation: rotarizq 0.5s  1;
+   -webkit-transform: rotateY(0deg); 
+}
 #movimiento img#tren.inicio{
 -webkit-animation: runauto 12s  infinite; /*cantidad de repeticiones de la animacion*/
 -webkit-animation-play-state: running;
@@ -208,16 +212,26 @@ left: calc(87%  );
 }
 /*rotaciones en manual*/
 @-webkit-keyframes rotarizq {
-  
+  0% {
+  -webkit-transform: rotateY(180deg);
+  }
+  0.1% {
+    -webkit-transform: rotateY(180deg);
+  }
   100% {
       -webkit-transform: rotateY(0deg);
  
   }  
 }
 @-webkit-keyframes rotarder {
-  
+  0% {
+    -webkit-transform: rotateY(0deg);
+  }
+  0.1% {
+    -webkit-transform: rotateY(0deg);
+  }
   100% {
-      -webkit-transform: rotateY(0deg);
+      -webkit-transform: rotateY(180deg);
  
   }  
 }
