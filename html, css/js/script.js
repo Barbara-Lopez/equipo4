@@ -2,37 +2,63 @@ $(document).ready(function(){
     $.ajaxSetup({cache:false});
 setInterval(function(){
     actualizarVariables()
-    actualizarVisu()
 }, 1000)
 })
 
 
-/*refresca el valor de las variables, pero solo en memoria, no en la visu*/
-function actualizarVariables(){
-    var variables = new Array()
+function actualizarVariables(){ //retorna un array 
     $.get("../portfolio/leer_variables.html", function(result) {
+			let variables = new Array()
             datos = result.split("|")
             for(i = 0; i < datos.length-1; i= i+2){
                 variable = new Map()
-                variable.set("nombre-variable", datos[i])
-                variable.set("valor", datos[i+1])
-                variables.push(variable)
+				if(["BBERDE", "BROJAS", "BAMARILLO"].includes(datos[i])){
+					variable.set("nombre-variable", "semaforo")
+					switch(datos[i]){
+						case "BBERDE":
+							if(datos[i+1]=="1"){
+								variable.set("valor", 1) // 1 para verde (ok), 2 para naranja(danger), 0 para rojo( no ok)
+							}
+							break
+						case "BAMARILLO":
+							if(datos[i+1]=="1"){
+								variable.set("valor", 2) 
+							}
+							break
+						case "BROJAS":
+							if(datos[i+1]=="1"){
+								variable.set("valor", 0) 
+							}
+							break
+					}
+					variables.push(variable)	
+				}
+				else{
+					variable.set("nombre-variable", datos[i])
+					variable.set("valor", datos[i+1])
+					variables.push(variable)
+				}
             }
+			actualizarVisu(variables)
 
     })
 }
 
 
-function actualizarVisu(){
-    variables.forEach( variable => function{
+function actualizarVisu(variables){
+	variables.forEach( variable => {
         nombre = "piloto-" + variable.get("nombre-variable")
         piloto = document.getElementById(nombre.toLowerCase())
-        if(variable.get("valor")==0){
-            piloto.className="status.noOk"
-        }
-        else{
-            piloto.className="status.Ok"
-        }
+		switch(variable.get("valor")){
+			case 0:
+				piloto.className="status noOk"
+				break
+			case 1:
+				piloto.className="status ok"
+				break
+			case 2:
+				piloto.className="status danger"
+		}
     })
 }
 
@@ -73,27 +99,18 @@ function actionNav(){
 
 function validarUsuario() {
     let nombre=document. getElementById ("user").value;
-    regNombre=new RegExp("^[A-Z]{1}[A-Za-z]{0,}$")
-    if (regNombre.test(nombre)) 
+    regNombre=new RegExp("^admin$") 
+    let passwd=document. getElementById ('passwd').value;
+    regPasswd=new RegExp("^12345$")
+    if (regNombre.test(nombre) && regPasswd.test(passwd)) 
     {
-        validarContraseña();
+       window.location="gestion.html";
     }
     else 
         alert("El usuario o la contaseña no es correcta") ;
 }
 
-function validarContraseña() {
-    let passwd=document. getElementById ('passwd').value;
-    regPasswd=new RegExp("^[0-9]{1,}$")
-    if (regPasswd.test(passwd)) 
-    {
-        window.location="../index.html";
 
-    }
-    else 
-       alert("El usuario o la contaseña no es correcta");
-      
-}
 
 
 

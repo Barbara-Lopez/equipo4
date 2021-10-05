@@ -6,13 +6,18 @@
     border-collapse: collapse;
     font-family: 'Arvo', serif;
 }
+html, body{
+    height: 100%;
+}
 h1{
     font-family: 'Comfortaa', cursive;
 }
 #contenedor{
     overflow-x: hidden;
     width: 95%;
-    height: 100%;
+    min-height: 100%;
+    height: auto !important; /*min-height hack*/
+    height: 100%;            /*min-height hack*/
     min-width: 360px;
     margin: 0 auto;
 }
@@ -323,6 +328,20 @@ footer {
 .status.noOk{
     background: #ff4242;
 }
+.blink {
+  animation: blink-animation 1s steps(5, start) infinite;
+  -webkit-animation: blink-animation 1s steps(5, start) infinite;
+}
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
 
 
 /* codigo botones biestables */
@@ -519,7 +538,7 @@ codigo radiobuttons modificados
 }
 
 /* tamano grande (pantallas grandes...)*/
-@media screen and (min-width: 990px){ 
+@media screen and (min-width: 1100px){ 
 #contenedor{
         max-width: 1200px;
         width: 95%;
