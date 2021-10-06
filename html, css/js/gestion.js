@@ -62,6 +62,31 @@ function actualizarVisu(variables){
     })
 }
 
+//tripleeeee
+function enviarPulsos(boton){
+    boton.value = 1
+    $.ajax({
+        type: "POST",
+        url: $("#form").attr('action'),
+        data: $boton.serialize()
+    })
+    boton.value = 0
+    $.ajax({
+        type: "POST",
+        url: $("#form").attr('action'),
+        data: $boton.serialize()
+    })
+}
+
+function enclavamientoManualAutomatico(boton){ //se espera que el parametro sea el propio boton que genera la llamada
+    if(boton.id=="switch-label-manual"){
+        document.getElementById('switch-label-auto').checked = false
+    }
+    else{
+        document.getElementById('switch-label-manual').checked = false
+    }
+}
+
 
 /*envio de datos a plc INCLUIDOS CHECKBOXES A FALSE*/
 
@@ -70,7 +95,7 @@ function enviarDatos(){
 
     //find the checkboxes
     var $checkboxes = $form.find('input[type=checkbox]');
-
+    
     //loop through the checkboxes and change to hidden fields
     $checkboxes.each(function() {
         if ($(this)[0].checked) {
