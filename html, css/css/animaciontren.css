@@ -108,6 +108,27 @@ animation-play-state: running;
     -o-animation-play-state:paused; 
     animation-play-state:paused;
 }
+
+/*animacion despliege menu*/
+@-webkit-keyframes despliegue_total{
+  0% {
+    width : 0% ;
+    display: none;
+  }
+  100% {
+    width : 100% ;
+    display: inherit;
+  }
+}
+@-webkit-keyframes disdespliegue_parcial{
+  0% {
+    width : 0% ;
+  }
+  100% {
+    width : 20% ;
+    display: inherit;
+  }
+}
 /*animacion automatica del tren a boton*/
 @-webkit-keyframes runauto {
   0% {

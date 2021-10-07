@@ -7,8 +7,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/x-icon" href="img/logotipo.png">
         <title>Document</title>
+        <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <link rel="stylesheet" type="text/css" href="css/css.css">
         <link rel="stylesheet" type="text/css" href="css/animaciontren.css">
+        
     </head>
     <body >
         <div id="contenedor">
@@ -18,11 +20,13 @@
                 <h1 id="titulo">Titulo</h1>
             </header>
             <div id="contenido">
-                <span id="boton-menu" style="font-size:2em;cursor:pointer" onclick="actionNav()">&#9776;</span>
+                <span id="boton-menu" style="font-size:2em;cursor:pointer;display:inherit;" >&#9776;</span>
+                    
                 <nav id="sidenav">
+                    
                     <ul>
-                        <li><a href="">primera pagina</a></li>
-                        <li><a href="">segunda pagina</a></li>
+                        <li><a href="" class="menucito">primera pagina</a></li>
+                        <li><a href="" class="menucito">segunda pagina</a></li>
                     </ul>
                 </nav>
                 <script src="js/script.js"></script>
@@ -88,4 +92,5 @@
               </div>
             </footer>
     </body>
+        
 </html>

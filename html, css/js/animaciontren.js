@@ -3,6 +3,7 @@ var uno = document.getElementById('iniciar') ;
  var tren = document.getElementById('tren');  
 tren.value = 1;
 console.log(tren.value)
+
 function porcentage(valornormal, valor100) {
    return (100 * valornormal) / valor100;
 } 
@@ -78,50 +79,60 @@ function moveraparada(destino){
  case "izquierda3":
 */
 }
+/* borrador 1*/
 /*
 function moverizquierda(destino,cantidad){
   
     //document.getElementById('tren').style.animation = "ir_izquierda 4s "+cantidad;
 //tren.addEventListener("webkitAnimationStart", Animacionizq);
 //tren.addEventListener("webkitAnimationEnd", alAcabarLaAnimacion);
-console.log(tren.value+","+destino)
-console.log(tren.style.left)
-for (var i = tren.value; i > destino; i--) {
-var idniani =porcentage((30*(i-1)),100)+"%"
-var finiani=porcentage((30*(i-1))-30,100)+"%"
+console.log(document.getElementById('tren').value+","+destino)
+console.log(document.getElementById('tren').style.left)
+for (var i = document.getElementById('tren').value; i > destino; i--) {
+var idniani =(30*(i-1)) +"%"
+var finiani=(30*(i-1))-30+"%"
 console.log(idniani+","+finiani)
-tren.animate([ 
+document.getElementById('tren').animate([ 
   { left: tren.style.left }, 
   { left: porcentage((30*(i-1))-30,100)+"%" }
 ], {
+  delay:1000,
   duration: 1000,
   iterations: 1
 })
-tren.style.left = porcentage((30*(i-1))-30,100)+"%";
-console.log(tren.style.left)
+document.getElementById('tren').style.left = finiani;
+        tren.style.value=i;
+//document.getElementById('tren').style.left = porcentage((30*(i-1))-30,100)+"%";
+console.log(document.getElementById('tren'))
+console.log(document.getElementById('tren').style.left)
+console.log(document.getElementById('tren').style.value)
 }
 }
 function moverderecha(destino,cantidad){
       //document.getElementById('tren').style.WebkitAnimation = "ir_derecha 4s  "+cantidad;
       //tren.addEventListener("webkitAnimationStart", Animacionder);
       //tren.addEventListener("webkitAnimationEnd", alAcabarLaAnimacion);
-      console.log(tren.style.left)
-      for (var i = tren.value; i < destino; i++) {
+      console.log(document.getElementById('tren').style.left)
+      var idniani,finiani;
+      for (var i = document.getElementById('tren').value; i < destino; i++) {
         console.log(i)
         //console.log(idniani+","+finiani)
-        var idniani =porcentage((30*(i-1)),100)+"%"
-        var finiani=porcentage((30*(i-1))+30,100)+"%"
+         idniani =porcentage((30*(i-1)),100)+"%"
+         finiani=porcentage((30*(i-1))+30,100)+"%"
         console.log(idniani+","+finiani)
-        tren.animate([ 
+        document.getElementById('tren').animate([ 
           { left: idniani }, 
           { left: finiani }
         ], {
+          delay:1000,
           duration: 1000,
           iterations: 1
         })
-        tren.style.left = porcentage((30*(i-1))+30,100)+"%";
-        console.log(tren)
-        console.log(tren.style.left)
+        document.getElementById('tren').style.left.value = finiani;
+        document.getElementById('tren').style.value=i;
+        console.log(document.getElementById('tren'))
+        console.log(document.getElementById('tren').style.left)
+        console.log(document.getElementById('tren').style.value)
   }
 }*/
 //animacion correcta v1 (de un lado a otro directamente)
@@ -161,7 +172,7 @@ function moverderecha(destino,cantidad){
            
             duration: tiempo,
             direction: 'alternate',
-            iterations: 1,
+            iterations: 1
           })
           tren.style.left = finiani;
 
