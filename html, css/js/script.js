@@ -37,9 +37,9 @@ burguerIcon.addEventListener('click',() =>
                 )
             botoncito.style.overflow="visible";
             document.getElementById("sidenav").style.width = "20%";
-            document.getElementById("sidenav").style.display = "inherit";/*
+            document.getElementById("sidenav").style.display = "inherit";
             document.getElementById("main").style.width = "80%";
-            document.getElementById("main").style.paddingLeft = "1em";*/
+            document.getElementById("main").style.paddingLeft = "1em";
            
             
               console.log("mini "+ botoncito.style)
@@ -168,7 +168,7 @@ function validarUsuario() {
 
 
 
-/* Contacto */
+/* funciones Contacto */
 
 function enviarContacto(){
     let nombre=document.getElementById('nombre').value;

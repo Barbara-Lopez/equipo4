@@ -1,5 +1,172 @@
 /* todo */
+/* 
+codigoc css para el funcionamiento de la animacion
+*/
+    /*bottones*/
 
+button#iniciar{
+  
+  display: block;
+  margin: 0 auto;
+        text-align: center;
+    width: 30%;
+  height: 95%;
+    font-family: helvetica;
+    font-weight: 300;
+    font-size: 25px;
+    font-style: italic;
+    color: #006505;
+    background-color: #82b085;
+    border-radius: 0.45em;
+    border: 0.15em double #006505;
+  }
+button#iniciar:hover{
+    opacity: 0.6;
+    text-decoration: none;
+  }
+#paradas
+{
+
+display: grid;
+  grid-template-columns: 4, 20%;
+  grid-template-rows: 4, 20%;
+  align-content: space-around;
+  justify-items: stretch;
+  grid-gap: 3%;
+  grid-template-areas:
+    "a a a a"
+    "b b b b"
+    "c c c c";
+}
+button.paradas{
+  margin: 0 auto;
+        text-align: center;
+display: inline-grid;
+align-content: space-between;
+  justify-content: space-around;
+width: 95%;
+  height: 95%;
+    padding: 1%;
+    padding-left: 2%;
+    padding-right: 2%;
+    font-family: helvetica;
+    font-size: 150%;
+    font-style: italic;
+    text-align: center;
+    color: #006505;
+    background-color: #589943;
+    border-radius: 0.45em;
+    border: 0.15em double transparent;
+}
+button.paradas:hover{
+   border: 0.15em double #006505;
+  background-color: transparent;
+ opacity: 0.6;
+
+}
+/*imagenes*/
+#paradas {
+ padding-left: 1%;
+  bottom: 28%;
+}
+
+#paradas img.parada{
+ padding-left: 1%;
+  width: 95%;
+  height: 95%;
+  bottom: 28%;
+  grid-area: b;
+}
+#movimiento{
+  grid-area: c;
+    grid-row: all;
+}
+#movimiento img#tren {
+
+  margin-left: 1%;
+  bottom: calc(28%);
+    display: inline-block;
+position: relative;
+margin-left: 1.5%;
+  width: 5%;
+  -webkit-transform: rotateY(180deg); 
+
+
+}
+
+#movimiento img#tren.inicio{
+-webkit-animation: runauto 12s  infinite; /*cantidad de repeticiones de la animacion*/
+-webkit-animation-play-state: running;
+animation-play-state: running; 
+}
+#movimiento img#tren.pausa{
+
+    -webkit-animation-play-state:paused;
+    -moz-animation-play-state:paused;
+    -o-animation-play-state:paused; 
+    animation-play-state:paused;
+}
+
+/*animacion automatica del tren a boton*/
+@-webkit-keyframes runauto {
+  0% {
+    left: 0;
+  }
+  4.165%
+  {
+    left: 0;
+  }
+  15.275% {
+     left: calc(30%);
+  }
+  19.44% {
+    left: calc(30%  );
+  }
+  30.51%{ 
+    left: calc(59% );
+    }
+  34.675% { 
+    left: calc(59%  );
+  }
+  45.79% {
+left: calc(87%  ); 
+-webkit-transform: rotateY(180deg); 
+  }
+
+  50% {
+    left: calc(87%  ); 
+     -webkit-transform: rotateY(0deg);
+  }
+
+  54.165%
+  {
+   left: calc(87%  ); 
+  }
+  65.275 {
+     left: calc(59%);
+  }
+ 69.44%{
+    left: calc(59%  );
+  }
+  80.51%{ 
+    left: calc(30% );
+    }
+  84.675% { 
+    left: calc(30%  );
+  }
+ 95.79%{
+    left: 0;
+-webkit-transform: rotateY(0deg); 
+  }
+
+  100% {
+    left: 0; 
+     -webkit-transform: rotateY(180deg);
+  }
+    
+}
+
+/*fin codigo css del funcionamiento de la animacion*/
 * {
     box-sizing: border-box;
     margin: 0;

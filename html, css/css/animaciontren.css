@@ -92,10 +92,7 @@ margin-left: 1.5%;
 
 
 }
-.rotarizq{
-  -webkit-animation: rotarizq 0.5s  1;
-   -webkit-transform: rotateY(0deg); 
-}
+
 #movimiento img#tren.inicio{
 -webkit-animation: runauto 12s  infinite; /*cantidad de repeticiones de la animacion*/
 -webkit-animation-play-state: running;
@@ -109,26 +106,6 @@ animation-play-state: running;
     animation-play-state:paused;
 }
 
-/*animacion despliege menu*/
-@-webkit-keyframes despliegue_total{
-  0% {
-    width : 0% ;
-    display: none;
-  }
-  100% {
-    width : 100% ;
-    display: inherit;
-  }
-}
-@-webkit-keyframes disdespliegue_parcial{
-  0% {
-    width : 0% ;
-  }
-  100% {
-    width : 20% ;
-    display: inherit;
-  }
-}
 /*animacion automatica del tren a boton*/
 @-webkit-keyframes runauto {
   0% {
@@ -187,75 +164,5 @@ left: calc(87%  );
   }
     
 }
-/*animaciones manuales*/
-@-webkit-keyframes ir_derecha {
-  0% {
-    left: 0;
-  }
-  0.1% {
-    left: 0;
-    -webkit-transform: rotateY(0deg);
-  }
-  10.%
-  {
-    left: 0;
-    -webkit-transform: rotateY(180deg);
-  }
-  90% {
-    left: calc(30%  );
-}
-  100% {
-     left: calc(30%  );
- 
-  }  
-}
-@-webkit-keyframes ir_izquierda {
-   0% {
-    right: 0;
-  }
-  0.1% {
-    right: 0;
-    -webkit-transform: rotateY(180deg);
-  }
-  10.%
-  {
-    right: 0;
-    -webkit-transform: rotateY(0deg);
-  }
-  
-  90% {
-    right: calc(30%  );
-}
-  100% {
-     right: calc(30%  );
- 
-  }  
-}
-/*rotaciones en manual*/
-@-webkit-keyframes rotarizq {
-  0% {
-  -webkit-transform: rotateY(180deg);
-  }
-  0.1% {
-    -webkit-transform: rotateY(180deg);
-  }
-  100% {
-      -webkit-transform: rotateY(0deg);
- 
-  }  
-}
-@-webkit-keyframes rotarder {
-  0% {
-    -webkit-transform: rotateY(0deg);
-  }
-  0.1% {
-    -webkit-transform: rotateY(0deg);
-  }
-  100% {
-      -webkit-transform: rotateY(180deg);
- 
-  }  
-}
-/**/
 
-/*fin codigo css */
+/*fin codigo css del funcionamiento de la animacion*/
