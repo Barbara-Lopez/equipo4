@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="../img/logotipo.png">
+        <title>Trebureus</title>
+        <link rel="stylesheet" type="text/css" href="../css/css.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Arvo&family=Comfortaa:wght@500&display=swap" rel="stylesheet">
+        <script type="text/javascript" src="../js/jquery.min.js"></script>
+        <script src="../js/script.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    </head>
+
+    <body >
+        <div id="contenedor">
+            
+            <header>
+                <div id="logo-slogan">
+                    <img id="logo-principal" src="../img/logotipo.png" alt="trebureus">
+                    <i id="slogan">Tus especialistas en movilidad</i>
+                </div>   
+                <h1 id="titulo">LOGIN</h1>
+                <a href="portfolio/login.html">Inicio sesi&oacute;n</a>
+            </header>
+            <div id="contenido">
+                <span id="boton-menu" style="font-size:2em;cursor:pointer" onclick="actionNav()">&#9776;</span>
+                <nav id="sidenav">
+                    <ul>
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="login.html">Login</a></li>
+                        <li><a href="gestion.html">Gesti&oacute;n</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </nav>
+                <main id="main">
+                    <h2>Inicio Sesi&oacute;n</h2>
+                    <form action="index.html" method="post">
+                        <label for="user">Usuario</label>
+                        <input type="text" name="usuario" id="user">
+                        <label for="passwd">Contraseña</label>
+                        <input type="password" name="contrasena" id="passwd">
+                        <input type="button" value="Aceptar" onclick="validarUsuario()"> 
+                    </form>
+                </main>
+            </div>    
+               
+            <footer>
+                <d class="contenido-footer">
+
+            <!--  sobre nuestra empresa -->
+                <div class="footer-items">
+                    <h1>Trebureus</h1>
+                    <p>Somos una compañia fundada en 1988 pionera en la administraci&oacute;n y gesti&oacute;n de tranvias electricos de nueva generaci&oacute;n. Nuestros sistemas se caracterizan por implementar las &uacute;ltimas tecnolog&iacute;as en gesti&oacute;n de la informaci&oacute;n y en materia de seguridad.</p>
+                </div>
+
+            <!--  enlaces  -->
+                <div class="footer-items">
+                  <h3>Enlaces</h3>
+                  <div class="border1"></div> <!--for the underline -->
+                    <ul>
+                      <a href="../index.html"><li>Home</li></a>
+                      <a href="login.html"><li>Login</li></a>
+                      <a href="contacto.html"><li>Contacto</li></a>
+                      <a href="gestion.html"><li>Gesti&oacute;n</li></a>
+                    </ul>
+                </div>
+
+            <!--  contacto -->
+                <div class="footer-items">
+                  <h3>Contacto</h3>
+                  <div class="border1"></div>
+                    <ul>
+                      <li><i class="fa fa-map-marker" aria-hidden="true"></i>Egibide Arriaga n12</li>
+                      <li><i class="fa fa-phone" aria-hidden="true"></i>945 32 35 69</li>
+                      <li><i class="fa fa-envelope" aria-hidden="true"></i>trebureus.soporte@gmail.com</li>
+                    </ul> 
+                </div>
+              
+            <!--   letra pequena  -->
+              <div class="footer-bottom">
+                Copyright &copy; Trebureus 2021.
+              </div>
+            </footer>
+        </div>
+    </body>
+</html>

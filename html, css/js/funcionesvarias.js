@@ -1,15 +1,16 @@
-/*realizado correctamente*/
-var uno = document.getElementById('iniciar') ; 
- var tren = document.getElementById('tren');  
-tren.value = 1;
+/*variables globales*/
+
+
+var controlauto = document.getElementById('iniciar') ;  //variable global delboton de la animacion automatica
+var tren = document.getElementById('tren');  //variable global de la imagen del tren de la animacion
+    tren.value = 1;
 console.log(tren.value)
-/*animacion despliegue*/
-var burguerIcon =document.querySelector('#boton-menu')
+var botondesplegable =document.querySelector('#boton-menu')
 var botoncito=document.getElementById("sidenav")
-botoncito=document.getElementById("sidenav")
-   console.log(botoncito)
-   /*evento al hacer click*/
-burguerIcon.addEventListener('click',() =>
+   /*evento al hacer click hace dicha funcion*/
+
+
+botondesplegable.addEventListener('click',() =>
 {
     var mobileReso = window.matchMedia("(max-width: 550px)")
     var tabletReso = window.matchMedia("(max-width: 768px)")
@@ -82,32 +83,40 @@ burguerIcon.addEventListener('click',() =>
     } 
 }
 , false)
+
+
 /*funcion de calcular el porcentaje*/
+
 function porcentage(valornormal, valor100) {
 return (100 * valornormal) / valor100;
 } 
+
+
 /*funcion de la animacion del tren automatico*/
+
+
 function animaciontotal()
 {
   if(tren.value != 1){
   moveraparada(1)
   tren.value = 1
+  controlauto.innerHTML =  'Iniciar Animacion';
   }
   else
   {
     tren.classList.toggle('pausa');/*en caso de que tenga esa clase lo quita, sino lo implementa*/
-  if (uno.innerHTML == 'Iniciar Animacion'||uno.innerHTML == 'Reanudar Animacion')
+  if (controlauto.innerHTML == 'Iniciar Animacion'||controlauto.innerHTML == 'Reanudar Animacion')
     {
-      if (uno.innerHTML == 'Iniciar Animacion') 
+      if (controlauto.innerHTML == 'Iniciar Animacion') 
       {
       tren.classList.toggle('inicio')
       tren.classList.toggle('pausa');
       }
-     uno.innerHTML = 'Pausar Animacion';
+     controlauto.innerHTML = 'Pausar Animacion';
     }      
     else 
     {
-    uno.innerHTML = 'Reanudar Animacion'; 
+    controlauto.innerHTML = 'Reanudar Animacion'; 
     }
   }
 }
@@ -118,8 +127,9 @@ function animaciontotal()
 
 function moveraparada(destino)
 {
-  let diferencia=0
-  let cambio="";
+  if (controlauto.innerHTML ==  'Iniciar Animacion') {
+  let diferencia=0//variable para calcular la cantidad de paradas a mover
+  let cambio="";//variable para controlar si se va a la derecha o izquierda
   let trenecito =parseInt(tren.value);
       console.log(trenecito)
    if (trenecito<destino) 
@@ -138,17 +148,21 @@ function moveraparada(destino)
       document.getElementById('tren').value=destino
    }
     console.log(destino + cambio + diferencia)
+    controlauto.innerHTML = 'Reponer Inicio';
+  }
 }
 
 
 
 //animacion manual (de un lado a otro directamente) 
-function moverizquierda(destino,cantidad)
+
+
+function moverizquierda(destino,cantidad)  //animacion direccion izquierda
 {    
   console.log(tren.value+","+destino)
   var idniani =porcentage((30*(tren.value-1)),100)+"%"
   var finiani=porcentage((30*(tren.value-1))-(30*cantidad),100)+"%"
-  var tiempo=1000*cantidad
+  var tiempo=1000*cantidad 
   console.log(idniani+","+finiani)
   document.getElementById('tren').animate
   (
@@ -157,14 +171,14 @@ function moverizquierda(destino,cantidad)
       { left: finiani }
     ], 
     {
-    duration: tiempo,
+    duration: tiempo,//el tiempo esta considerado en mlisegundos
     iterations: 1
     }
   )
   tren.style.left = finiani;
 }
 
-function moverderecha(destino,cantidad)
+function moverderecha(destino,cantidad) //animacion direccion izquierda
 {
   console.log(tren.value+","+destino)
   var idniani=porcentage((30*(tren.value-1)),100)+"%"
@@ -178,7 +192,7 @@ function moverderecha(destino,cantidad)
       { left: finiani }
     ], 
     {
-    duration: tiempo,
+    duration: tiempo,//el tiempo esta considerado en mlisegundos
     iterations: 1
     }
   )
