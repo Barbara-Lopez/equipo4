@@ -328,6 +328,9 @@ footer {
 .status.noOk{
     background: #ff4242;
 }
+.noStatus{
+    background: none;
+}
 .blink {
   animation: blink-animation 1s steps(5, start) infinite;
   -webkit-animation: blink-animation 1s steps(5, start) infinite;
