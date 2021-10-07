@@ -8,7 +8,6 @@ setInterval(function(){
 
 function actualizarVariables(){ //retorna un array 
     $.get("../portfolio/leer_variables.html", function(result) {
-		console.log(result)
             let variables = new Array()
             datos = result.split("|")
 			senal_bombilla = false
@@ -68,16 +67,23 @@ function enviarPulsos(boton){
 	senal.setAttribute("type", "hidden")
 	senal.setAttribute("value", 1)
 	formulario.innerHTML = senal.outerHTML
-	console.log(formulario)
-
 
     $.ajax({
         type: "POST",
-        url: $('#form-controles').attr('action'),
-        data: $("#formVirtual").serialize()
+        url: $('#formVirtual').attr('action'),
+        data: $(formulario).serialize()
 	})
+	setTimeout(function(){
+		senal.setAttribute("value", 0)
+		formulario.innerHTML = senal.outerHTML
+		$.ajax({
+			type: "POST",
+			url: $('#formVirtual').attr('action'),
+			data: $(formulario).serialize()
+		})
+		
+	}, 250);
 	
-    
 }
 
 function enclavamientoManualAutomatico(boton){ //se espera que el parametro sea el propio boton que genera la llamada
