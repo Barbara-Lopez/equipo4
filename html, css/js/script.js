@@ -1,42 +1,96 @@
 /*codigo del menu de navegacion desplegable*/
-function actionNav(){
-    var mobileReso = window.matchMedia("(max-width: 550px)") 
-    var tabletReso = window.matchMedia("(max-width: 768px)")
-    var desktopReso = window.matchMedia("(min-width: 768px)")
-   
+/*animacion despliegue*/
+var Navegador =document.querySelector('#boton-menu')
+var botoncito=document.getElementById("sidenav")
+   console.log(botoncito)
+   /*evento de la animacion de la barra del navegador al hacer click*/
+Navegador.addEventListener('click',() =>
+{
+    let mobileReso = window.matchMedia("(max-width: 550px)")
+    let tabletReso = window.matchMedia("(max-width: 768px)")
+    let desktopReso = window.matchMedia("(min-width: 768px)")
 
-    if(document.getElementById("sidenav").style.display == "none"){
-        if(mobileReso.matches){
-            document.getElementById("sidenav").animate([{width :"0%",display:"none"},{width :"100%",display :"inherit"}],{duration:200, iterations:1, direction:'alternate'})
+    console.log(botoncito.style.display)
+    if(!botoncito.style.display)
+    botoncito.style.display ="none"
+    console.log(botoncito.style.display)
+
+    if(botoncito.style.display == "none" || botoncito.style.overflow=="hidden")
+    {
+        if(mobileReso.matches)
+            /*despliegue total de la barra*/
+        {
+
+            document.getElementById("sidenav").animate
+            ([{width : "0%" , display: "none"},{width : "100%" , display : "inherit"}],
+               {duration: 200 , iterations:1, easing: "ease-in", fill: "forwards"})
+            botoncito.style.overflow="visible";
             document.getElementById("sidenav").style.width = "100%";
             document.getElementById("sidenav").style.display = "inherit";
-            document.getElementById("main").style.width = "100%";
+              console.log("grando "+document.getElementById("sidenav"))
         }
-        else{
-            document.getElementById("sidenav").animate([{width :"0%",display:"none"},{width :"20%",display :"inherit"}],{duration:200, iterations:1, direction:'alternate'})
-            document.getElementById("main").animate([{width :"100%"},{width :"80%"}],{duration:200, iterations:1})
+        else
+            /*despliegue parcial de la barra*/
+        {
+            document.getElementById("main").animate
+                (
+                [{width :"100%"},{width :"80%"}],
+                {duration:200, iterations:1, easing: "ease-in", fill: "forwards" }
+                )
+            document.getElementById("sidenav").animate
+                (
+                [{width :"0%"  , display: "none"},{width : "20%",display : "inherit" }],
+                {duration: 200 , iterations:1, easing: "ease-in", fill: "forwards" }
+                )
+            botoncito.style.overflow="visible";
             document.getElementById("sidenav").style.width = "20%";
             document.getElementById("sidenav").style.display = "inherit";
             document.getElementById("main").style.width = "80%";
             document.getElementById("main").style.paddingLeft = "1em";
            
+            
+              console.log("mini "+ botoncito.style)
         }
     }
-    else{
-        if(document.getElementById("sidenav").style.width == "100%"){
-            document.getElementById("sidenav").animate([{width :"100%",display:"inherit"},{width :"0%",display :"none"}],{duration:200, iterations:1})
+    else 
+    {
+        if(document.getElementById("sidenav").style.width == "100%")
+            /*despliegue total de la barra*/
+        {
+            
+             document.getElementById("sidenav").animate
+                (
+                [{width : "100%" , display : "inherit"},{width : "0%" , display: "none"}],
+                {duration: 200 , iterations:1 , easing: "ease-in", fill: "forwards"}
+                )
+             botoncito.style.width = "0";
+             botoncito.style.overflow="hidden";
         }
-        else{
-            document.getElementById("sidenav").animate([{width :"20%",display:"inherit"},{width :"0%",display :"none"}],{duration:200, iterations:1})
-        }
-        document.getElementById("sidenav").style.width = "0";
-        document.getElementById("sidenav").style.display = "none";
-        document.getElementById("main").style.width = "100%";
-        document.getElementById("main").style.paddingLeft = "3em";
-
-    }
-    
+        else
+            /*despliegue parcial de la barra*/
+        {
+            document.getElementById("sidenav").animate
+                (
+                [{width : "20%",display : "inherit" },{width :"0%"  , display: "none"}],
+                {duration: 200 , iterations:1, easing: "ease-in", fill: "forwards" }
+                )
+            document.getElementById("main").animate
+                (
+                [{width :"80%"},{width :"100%"}],
+                {duration:200, iterations:1, easing: "ease-in", fill: "forwards" }
+                )
+            
+            botoncito.style.width = "0";
+            botoncito.style.overflow="hidden";
+            document.getElementById("main").style.width = "100%";
+            document.getElementById("main").style.paddingLeft = "3em";
+      
+         }
+    } 
 }
+, false)
+
+
 
 /* usuario y contraseña */
 
