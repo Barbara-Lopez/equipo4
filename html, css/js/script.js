@@ -49,6 +49,7 @@ function validarUsuario() {
     if (regNombre.test(nombre) && regPasswd.test(passwd)) 
     {
        window.location="gestion.html";
+       window.sessionStorage.setItem("user", "admin")
     }
     else 
         swal("Usuario o contraseña no validos", {icon: "error",})
@@ -56,6 +57,15 @@ function validarUsuario() {
 
 
 
+
+function autenticar(){
+    if (window.sessionStorage.getItem("user")=="admin") {
+        return true
+    }
+    else
+      //throw new Error('Tu Browser no soporta sessionStorage!');
+      return false
+    }
 
 
 

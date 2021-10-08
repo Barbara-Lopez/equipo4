@@ -57,8 +57,8 @@ function actualizarVisu(variables){
     })
 }
 
-//tripleeeee
-function enviarPulsos(boton){
+/*
+function enviarPulso(boton){
 	var formulario = document.createElement("form")
 	formulario.setAttribute("id", "formVirtual")
 	formulario.setAttribute("method", "post")
@@ -71,26 +71,51 @@ function enviarPulsos(boton){
     $.ajax({
         type: "POST",
         url: $('#formVirtual').attr('action'),
-        data: $(formulario).serialize()
+        data: $(formulario).serialize(),
+        succes: function(){
+        	senal.setAttribute("value", 0)
+			formulario.innerHTML = senal.outerHTML
+		    $.ajax({
+		        type: "POST",
+		        url: $('#formVirtual').attr('action'),
+		        data: $(formulario).serialize(),
+			})
+        }
 	})
-	setTimeout(function(){
-		senal.setAttribute("value", 0)
-		formulario.innerHTML = senal.outerHTML
-		$.ajax({
-			type: "POST",
-			url: $('#formVirtual').attr('action'),
-			data: $(formulario).serialize()
-		})
-		
-	}, 250);
-	
 }
+*/
+function enviarPulso(boton){
+	var formulario = document.createElement("form")
+	formulario.setAttribute("id", "formVirtual")
+	formulario.setAttribute("method", "post")
+	senal =  document.createElement("input")
+	senal.setAttribute('name', boton.name)
+	senal.setAttribute("type", "hidden")
+	senal.setAttribute("value", 1)
+	formulario.innerHTML = senal.outerHTML
+
+	$.ajax({
+        type: "POST",
+        url: $('#formVirtual').attr('action'),
+        data: $(formulario).serialize(),
+        succes: function(){
+        	alert("funciona correctamente")
+        },
+        error: function(){
+        	alert("error")
+        },
+        complete: function(){
+        	alert("completado")
+        }
+	})
+}
+
 
 function enclavamientoManualAutomatico(boton){ //se espera que el parametro sea el propio boton que genera la llamada
     if(boton.id=="switch-label-manual"){
         document.getElementById('switch-label-auto').checked = false
     }
-    else{
+    if(boton.id=="switch-label-auto"){
         document.getElementById('switch-label-manual').checked = false
     }
 }
