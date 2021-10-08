@@ -1,0 +1,723 @@
+/* todo */
+
+/* 
+codigoc css para el funcionamiento de la animacion
+*/
+
+
+/*fin codigo css del funcionamiento de la animacion*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border-collapse: collapse;
+    font-family: 'Arvo', serif;
+}
+html, body{
+    height: 100%;
+}
+h1{
+    font-family: 'Comfortaa', cursive;
+}
+#contenedor{
+    overflow-x: hidden;
+    width: 95%;
+    min-height: 100%;
+    height: auto !important; /*min-height hack*/
+    height: 100%;            /*min-height hack*/
+    min-width: 360px;
+    margin: 0 auto;
+}
+
+/* Cabecera */
+header {
+    float: left;
+    clear: both;    
+    width: 100%;
+    height: 8em;
+    background: rgb(1,40,10);
+    background: linear-gradient(278deg, rgba(1,40,10,0.8309698879551821) 0%, rgba(32,185,16,0.7777485994397759) 50%, rgba(37,105,61,0.8309698879551821) 100%);
+}
+header #logo-slogan{
+    float: left;
+    width: 30%;
+    height: 100%;
+}
+header #logo-principal{
+    float: left;
+    margin-left: 1em;
+    margin-top: 1em;
+    height: 60%;
+}
+header #slogan{
+    height: 40%;
+    float: left;
+    padding-left: 30%;
+}
+header #titulo{
+    float: left;
+    width: 40%;
+    height: 5em;
+    padding-top: 5%;
+    padding-left: 15%;
+}
+header>a{
+    text-align: center;
+    width: 20%;
+    float: right;
+    margin: 3%;
+    padding: 1%;
+    color: white;
+    text-decoration: none;
+    border: 1px solid #ccc;
+    border-radius: 0.3em;
+}
+header>a:hover{
+    background-color: rgb(255, 255, 255,0.6);
+}
+
+/* Cuerpo */
+#contenido{
+    overflow-x: scroll;
+    background-color: #F0EBEB;
+    float: left;
+    padding-top: 1em;
+}
+
+/* Navegador */
+#contenido #boton-menu{
+    height: 1.5em;
+    font-size:2em;
+    cursor:pointer;
+    position: absolute;
+    border: 1px solid black;
+    border-radius: 25%;
+}
+#contenido #boton-menu:hover{
+    color: grey;
+}
+#contenido #sidenav{
+    padding-top: 3em;
+    display: none;
+    float: left;
+    border-top-right-radius: 2em;
+    border-bottom-right-radius: 2em;
+}
+#sidenav ul{
+    overflow-x: hidden;
+    border-top-right-radius: 2em;
+    border-bottom-right-radius: 2em;
+    background: rgb(199,232,208);
+    background: linear-gradient(326deg, rgba(199,232,208,0.46367310725552047) 0%, rgba(140,198,143,0.7633576498422713) 50%);
+    
+}
+
+#sidenav ul li{
+    list-style: none;
+    padding: 0.5em;
+    padding-left: 0.75em;
+    border-bottom: 1px solid lightgrey;
+    border-top: 1px solid lightgrey;
+}
+#sidenav ul li:hover{
+    color: grey;
+    padding-left: 0.90em;
+}
+#sidenav ul li a{
+    display: block;
+    color: black;
+    text-decoration: none;
+    padding: 0.5em;
+    padding-left: 0.75em;
+}
+#sidenav ul li a:hover{
+    background-color: rgb(171, 171, 171, 0.4 );
+    border-radius: 1em;
+    overflow-x: hidden;
+}
+
+/* Main */
+#contenido #main{
+    float: right;
+    padding: 1em;
+    padding-left: 3em;
+    height: 100%;
+    width: 100%;
+}
+#contenido #main img{
+    margin: 1em;
+    width: 50%;
+}
+#contenido #main #img1{
+    float: left;
+}
+#contenido #main #img2{
+    float: right;
+}
+
+#contenido #main p{
+    padding: 0.5em;
+    padding-top: 2em;
+}
+
+
+/*codigo formulario*/
+#contenido #main #form-contacto{
+    width: 100%;
+    padding: 10% 20%;
+
+}
+#contenido #main form button, input, textarea{
+    width: 100%;
+    padding: 1em 1.7em;
+    margin: 0.7em 0;
+    border: 1px solid #ccc;
+    border-radius: 0.3em;
+  }
+
+  #contenido #main .tg-wrap{
+    text-align: center;
+  }
+
+
+
+/* Pie de pagina */
+footer {
+    float: left;
+    clear: both;
+    width: 100%;
+    background: rgb(1,40,10);
+    background: linear-gradient(278deg, rgba(1,40,10,0.8309698879551821) 0%, rgba(32,185,16,0.7777485994397759) 50%, rgba(37,105,61,0.8309698879551821) 100%);
+    display: block;
+ }
+
+ .contenido-footer {
+     width: 95%;
+     margin: auto;
+     padding: 2em 1em;
+     display: flex;
+     flex-wrap: wrap;
+     box-sizing: border-box;
+     justify-content: center;
+ }
+
+.footer-items {
+    width: calc(100%/3);
+    padding: 1em 4em;
+    box-sizing: border-box;
+}
+
+.footer-items p {
+    font-size: 1em;
+    text-align: justify;
+    line-height: 1.5em;
+}
+
+.footer-items h1 {
+}
+
+.border1 {
+    height: 3px;
+    width: 3em;
+    background: #ff9800;
+    color: #ff9800;
+    background-color: #ff9800;
+    border: 0px;
+}
+
+.footer-items ul {
+    padding-left: 0.5em;
+    list-style: none;
+    font-size: 1em;
+    letter-spacing: 0.5px;  
+ }
+
+.footer-items ul a {
+    text-decoration: none;
+    color: black;
+    outline: none;
+    transition: 0.3s;
+}
+
+.footer-items ul a:hover {
+    color: grey;
+}
+
+.footer-items ul li {
+    margin: 0.5em 0;
+    height: 2em;
+}
+
+.footer-items li i {
+    margin-right: 2em;
+}
+
+.footer-bottom {
+  width: 100%;
+    padding: 1em;
+    font-size: 12px;
+    text-align: center;
+}
+
+
+/*boxes que albergan los controles y pilotos del automata*/
+
+#pilotos, #controles{ 
+    text-align: center;
+    padding: 2em;
+    float: left;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 2em;
+    border: solid 2px black;
+    border-radius: 1em;
+    align-items: center;
+}
+
+#pilotos{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-auto-flow: row;
+}
+#contenido #main #controles #form-controles{
+    margin: 0 auto;
+    width: 90%;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-auto-flow: row;
+    grid-column-gap: 1em;
+    align-items: center;
+}
+#contenido #main #controles #form-controles input, label{
+     width: 24%;
+}
+#contenido #main #controles #form-controles #slider-velocidad{
+    width: 100%;
+    grid-column: 1 / 9;
+}
+#contenido #main #controles #form-controles #label-slider{
+    width: 100%;
+    grid-column: 1 / 9;
+    text-align: center;
+}
+#paradas{
+    width: 100%;
+    grid-column: 1 / 9;
+}
+#label-paradas{
+    width: 100%;
+    grid-column: 1 / 9;
+    text-align: center;
+}
+
+/*codigo pilotos*/
+.status{
+    padding-bottom: 2em;
+    position: relative;
+    display: inline-block;
+    width: 2.5em;
+    height: 2.5em;
+    background: red;
+    border-radius: 50%;
+    border: 2px solid black;
+
+}
+
+.status.ok{
+    background: #72ff7d;
+}
+
+.status.danger{
+    background: #ffda72;
+}
+
+.status.noOk{
+    background: #ff4242;
+}
+.noStatus{
+    background: none;
+}
+.blink {
+  animation: blink-animation 1s steps(5, start) infinite;
+  -webkit-animation: blink-animation 1s steps(5, start) infinite;
+}
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+
+
+/* codigo botones biestables */
+:root {
+    --color-green: #00a878;
+    --color-red: #fe5e41;
+    --color-button: #fdffff;
+    --color-black: #000;
+}
+.switch-button {
+    display: inline-block;
+}
+.switch-button .switch-button__checkbox {
+    display: none;
+}
+.switch-button .switch-button__label {
+    background-color: var(--color-red);
+    width: 5rem;
+    height: 2rem;
+    border-radius: 2rem;
+    display: inline-block;
+    position: relative;
+}
+.switch-button .switch-button__label:before {
+    transition: .2s;
+    display: block;
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--color-button);
+    content: '';
+    border-radius: 50%;
+    box-shadow: inset 0px 0px 0px 1px var(--color-black);
+}
+.switch-button .switch-button__checkbox:checked + .switch-button__label {
+    background-color: var(--color-green);
+}
+.switch-button .switch-button__checkbox:checked + .switch-button__label:before {
+    transform: translateX(3rem);
+}
+
+
+/*
+codigo radiobuttons modificados
+*/
+.radio {
+    width: 100%;
+    background: #454857;
+    padding: 0.4em;
+    border-radius: 0.2em;
+    box-shadow: inset 0 0 0 3px rgba(35, 33, 45, 0.3),
+        0 0 0 3px rgba(185, 185, 185, 0.3);
+    position: relative;
+}
+
+.radio input {
+    width: 24%;
+    height: 100%;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 0.1em;
+    padding: 0.2em 0.5em;
+    background: #454857;
+    color: #bdbdbdbd;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    transition: all 100ms linear;
+}
+
+.radio input:checked {
+    background-image: linear-gradient(180deg, #95d891, #74bbad);
+    color: #fff;
+    box-shadow: 0 1px 1px #0000002e;
+    text-shadow: 0 1px 0px #79485f7a;
+}
+
+.radio input:before {
+    content: attr(label);
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+
+
+/*moviles*/
+@media screen and (max-width : 550px) {
+    #contenedor{
+        width: 100%;
+
+    }
+    #contenido{
+        width: 100%;
+    }
+    header #logo-slogan{
+        width: 100%;
+    }
+    
+    header #titulo{
+        display: none;
+        height: 5em;
+        padding: 0.5em;
+    }
+    footer .footer-items{
+        width: 100%;
+    }
+    #contenido #main #pilotos{
+        grid-template-columns: 1fr 1fr;
+    }
+    #contenido #main #controles #form-controles{
+        margin: 0 auto;
+        width: 70%;
+        text-align: right;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-auto-flow: row;
+    }
+    #contenido #main #controles #form-controles input, label{
+         width: 24%;
+    }
+    #contenido #main #controles #form-controles #slider-velocidad{
+        width: 100%;
+        grid-column: 1 / 3;
+    }
+    #contenido #main #controles #form-controles #label-slider{
+        width: 100%;
+        grid-column: 1 / 3;
+        text-align: center;
+    }
+    #paradas{
+        width: 100%;
+        grid-column: 1 / 3;
+    }
+    #label-paradas{
+        width: 100%;
+        grid-column: 1 / 3;
+        text-align: center;
+    }
+    #contenido #main #controles #form-controles .radio input{
+        width: 23%;
+    }
+
+
+}
+/*bottones*/
+
+button#iniciar{
+  
+  display: block;
+  margin: 0 auto;
+        text-align: center;
+    width: 30%;
+  height: 95%;
+    font-family: 'Arvo', serif;
+    font-weight: 300;
+    font-size: 100%;
+    font-style: italic;
+    color: #006505;
+    background-color: #82b085;
+    border-radius: 0.45em;
+    border: 0.15em double #006505;
+  }
+button#iniciar:hover{
+    opacity: 0.6;
+    text-decoration: none;
+  }
+
+#animacion #paraditas
+{
+
+display: grid;
+  grid-template-columns: 4, 20%;
+  grid-template-rows: 4, 20%;
+  align-content: space-around;
+  justify-items: stretch;
+  grid-gap: 3%;
+  grid-template-areas:
+    "a a a a"
+    "b b b b"
+    "c c c c";
+}
+button.paradas{
+  margin: 0 auto;
+        text-align: center;
+display: inline-grid;
+align-content: space-between;
+  justify-content: space-around;
+width: 95%;
+  height: 95%;
+    padding: 1%;
+    padding-left: 2%;
+    padding-right: 2%;
+    font-family: 'Arvo', serif;
+    font-size: 80%;
+    font-style: italic;
+    text-align: center;
+    color: #006505;
+    background-color: #589943;
+    border-radius: 0.45em;
+    border: 0.15em double transparent;
+}
+button.paradas:hover{
+   border: 0.15em double #006505;
+  background-color: transparent;
+ opacity: 0.6;
+
+}
+
+
+/*animacion automatica del tren a boton*/
+/*0.8=0.5 segundos
+15.87=10segundos
+*/
+@-webkit-keyframes runauto {
+  0%     { left: 0 !important;  }
+  0.8%   { left: calc(30%);}
+  16.67% { left: calc(30% ); }
+  17.47% { left: calc(59% ); }
+  33.34% { left: calc(59%);  }
+  34.14% { left: calc(87%); }
+  48.00% { left: calc(87%); -webkit-transform: rotateY(180deg);}
+  50%    { left: calc(87%); -webkit-transform: rotateY(0deg);}
+  50.08% { left: calc(59%);}
+  66.67% { left: calc(59%);}
+  67.47% { left: calc(30%);}
+  83.34% { left: calc(30%);}
+  84.14% { left: 0;}
+  98.00% { left: 0; -webkit-transform: rotateY(0deg);}
+  100%   { left: 0; -webkit-transform: rotateY(180deg);}
+    
+}
+
+/*imagenes*/
+#pilotos img, #controles img{
+    
+    width: 100%;
+} 
+#animacion #paraditas {
+text-align: initial;
+    width: 100%;
+ padding-left: 1%;
+  bottom: 28%;
+}
+
+#animacion #paraditas img.parada{
+ padding-left: 1%;
+ width: 95%;
+  height: 95%;
+  bottom: 28%;
+  grid-area: b;
+}
+#movimiento{
+    text-align: initial;
+  grid-area: c;
+    grid-row: all;
+}
+#movimiento img#tren {
+  bottom: calc(28%);
+    display: inline-block;
+position: relative;
+margin-left: 2.5%;
+width: 5%;
+  -webkit-transform: rotateY(180deg); 
+}
+/*posicionamiento de las paradas*/
+#movimiento img#tren.parada1{
+    left: 0;
+}
+#movimiento img#tren.parada2{
+    left: 30%;
+}
+#movimiento img#tren.parada3{
+    left: 60%;
+}
+#movimiento img#tren.parada4{
+    left: 90%;
+}
+
+#movimiento img#tren.arranque{
+overflow: visible;
+     width: 5%;
+}
+
+#movimiento img#tren.inicio{
+     width: 5%;
+-webkit-animation: runauto 63s  infinite; /*cantidad de repeticiones de la animacion*/
+-webkit-animation-play-state: running;
+animation-play-state: running; 
+}
+#movimiento img#tren.pausa{
+
+    -webkit-animation-play-state:paused;
+    -moz-animation-play-state:paused;
+    -o-animation-play-state:paused; 
+    animation-play-state:paused;
+}
+#movimiento img#tren.reinicio {
+    -webkit-animation-play-state: initial;
+    -moz-animation-play-state: initial;
+    -o-animation-play-state: initial;
+    animation-play-state: initial;
+}
+/* tamano mediano (tablets...)*/
+@media screen and (min-width: 550px) and (max-width: 990px) { 
+#contenedor{
+        width: 100%;
+
+    }
+    #contenido{
+        width: 100%;
+    }
+    footer .footer-items{
+        width: 100%;
+    }
+    #contenido #main #pilotos{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    #contenido #main #controles #form-controles{
+        margin: 0 auto;
+        width: 90%;
+        text-align: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-auto-flow: row;
+    }
+    #contenido #main #controles #form-controles input, label{
+         width: 24%;
+    }
+    #contenido #main #controles #form-controles #slider-velocidad{
+        width: 100%;
+        grid-column: 1 / 5;
+    }
+    #contenido #main #controles #form-controles #label-slider{
+        width: 100%;
+        grid-column: 1 / 5;
+        text-align: center;
+    }
+    #paradas{
+        width: 100%;
+        grid-column: 1 / 5;
+    }
+    #label-paradas{
+        width: 100%;
+        grid-column: 1 / 5;
+        text-align: center;
+    }
+    #contenido #main #controles #form-controles .radio input{
+        width: 23%;
+    }
+}
+
+/* tamano grande (pantallas grandes...)*/
+@media screen and (min-width: 1100px){ 
+#contenedor{
+        max-width: 1200px;
+        width: 95%;
+
+    }
+    #contenido{
+        width: 100%;
+    }
+    
+}
+
+
+
+    
+    
