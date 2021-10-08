@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function(){  //Necesario para poder refrescar las variables cada segundo
     $.ajaxSetup({cache:false});
 setInterval(function(){
     actualizarVariables()
@@ -6,13 +6,13 @@ setInterval(function(){
 })
 
 
-function actualizarVariables(){ //retorna un array 
-    $.get("../portfolio/leer_variables.html", function(result) {
-            let variables = new Array()
-            datos = result.split("|")
-			senal_bombilla = false
-            for(i = 0; i < datos.length-1; i= i+2){
-                variable = new Map()  
+function actualizarVariables(){ 
+    $.get("../portfolio/leer_variables.html", function(result) {//genera una peticion get que retona un string
+            let variables = new Array()							// de los valores mas el nombre de su variable
+            datos = result.split("|")							//y los formatea de tal manera que introduce los valores
+			senal_bombilla = false								//con clave-valor en un array pasa procesarlos luego
+            for(i = 0; i < datos.length-1; i= i+2){				// en la funcion actualizarVisu
+                variable = new Map()  					
 				variable.set("nombre-variable", datos[i])
 				variable.set("valor", datos[i+1])
 				variables.push(variable)
@@ -23,10 +23,10 @@ function actualizarVariables(){ //retorna un array
 }
 
 
-function actualizarVisu(variables){
-    variables.forEach( variable => {
-        nombre = "piloto-" + variable.get("nombre-variable")
-		nombre = nombre.toLowerCase()
+function actualizarVisu(variables){							//espera como parametro un array con un conjunto de clave-valor
+    variables.forEach( variable => {						// donde la clave es el nombre de la señal y en el html utiliza el prefijo "piloto-" + nombre variable
+        nombre = "piloto-" + variable.get("nombre-variable")// para identificar el piloto correspondiente al que queremos asociar la señal
+		nombre = nombre.toLowerCase()						
         piloto = document.getElementById(nombre)
 		if(nombre != "piloto-semaforo"){
 			switch(variable.get("valor")){
@@ -83,11 +83,11 @@ function enviarPulso(boton){
         }
 	})
 }
-*/
-function enviarPulso(boton){
-	var formulario = document.createElement("form")
-	formulario.setAttribute("id", "formVirtual")
-	formulario.setAttribute("method", "post")
+*/													
+function enviarPulso(boton){						//espera como parametro el propio boton que genera el evento para poder recuperar su atributo name
+	var formulario = document.createElement("form") //se genera un "formulario virtual" al cual se le añade 
+	formulario.setAttribute("id", "formVirtual")	// un input type hidden al que se le asigna valor 
+	formulario.setAttribute("method", "post")		// y se le asigna el atributo name 
 	senal =  document.createElement("input")
 	senal.setAttribute('name', boton.name)
 	senal.setAttribute("type", "hidden")
@@ -95,7 +95,7 @@ function enviarPulso(boton){
 	formulario.innerHTML = senal.outerHTML
 
 	$.ajax({
-        type: "POST",
+        type: "POST",								//se genera una peticion post para actualizar la variable en el plc
         url: $('#formVirtual').attr('action'),
         data: $(formulario).serialize(),
         succes: function(){
@@ -113,7 +113,7 @@ function enviarPulso(boton){
 
 function enclavamientoManualAutomatico(boton){ //se espera que el parametro sea el propio boton que genera la llamada
     if(boton.id=="switch-label-manual"){
-        document.getElementById('switch-label-auto').checked = false
+        document.getElementById('switch-label-auto').checked = false		//esta funcion simplemente asegura que el modo manual y el modo auto no entran en conflicto
     }
     if(boton.id=="switch-label-auto"){
         document.getElementById('switch-label-manual').checked = false
