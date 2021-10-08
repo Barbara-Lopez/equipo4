@@ -1,36 +1,43 @@
 /*codigo del menu de navegacion desplegable*/
 /*animacion despliegue*/
-var burguerIcon =document.querySelector('#boton-menu')
+var Navegador =document.querySelector('#boton-menu')
 var botoncito=document.getElementById("sidenav")
-botoncito=document.getElementById("sidenav")
    console.log(botoncito)
-   /*evento al hacer click*/
-burguerIcon.addEventListener('click',() =>
+   /*evento de la animacion de la barra del navegador al hacer click*/
+Navegador.addEventListener('click',() =>
 {
-    var mobileReso = window.matchMedia("(max-width: 550px)")
-    var tabletReso = window.matchMedia("(max-width: 768px)")
-    var desktopReso = window.matchMedia("(min-width: 768px)")
+    let mobileReso = window.matchMedia("(max-width: 550px)")
+    let tabletReso = window.matchMedia("(max-width: 768px)")
+    let desktopReso = window.matchMedia("(min-width: 768px)")
+
     console.log(botoncito.style.display)
     if(!botoncito.style.display)
     botoncito.style.display ="none"
     console.log(botoncito.style.display)
+
     if(botoncito.style.display == "none" || botoncito.style.overflow=="hidden")
     {
         if(mobileReso.matches)
+            /*despliegue total de la barra*/
         {
 
-          botoncito.animate([{width : "0%" , display: "none"},{width : "100%" , display : "inherit"}],{duration: 200 , iterations:1, easing: "ease-in", fill: "forwards"})
-           botoncito.style.overflow="visible";
+            document.getElementById("sidenav").animate
+            ([{width : "0%" , display: "none"},{width : "100%" , display : "inherit"}],
+               {duration: 200 , iterations:1, easing: "ease-in", fill: "forwards"})
+            botoncito.style.overflow="visible";
+            document.getElementById("sidenav").style.width = "100%";
+            document.getElementById("sidenav").style.display = "inherit";
               console.log("grando "+document.getElementById("sidenav"))
         }
         else
+            /*despliegue parcial de la barra*/
         {
             document.getElementById("main").animate
                 (
                 [{width :"100%"},{width :"80%"}],
                 {duration:200, iterations:1, easing: "ease-in", fill: "forwards" }
                 )
-          document.getElementById("sidenav").animate
+            document.getElementById("sidenav").animate
                 (
                 [{width :"0%"  , display: "none"},{width : "20%",display : "inherit" }],
                 {duration: 200 , iterations:1, easing: "ease-in", fill: "forwards" }
@@ -45,42 +52,44 @@ burguerIcon.addEventListener('click',() =>
               console.log("mini "+ botoncito.style)
         }
     }
-    else{
-        if(botoncito.width == "100%"){
-            botoncito.classList.toggle('aparecergrande')
+    else 
+    {
+        if(document.getElementById("sidenav").style.width == "100%")
+            /*despliegue total de la barra*/
+        {
             
-             botoncito.animate([{width : "100%" , display : "inherit"},{width : "0%" , display: "none"}],{duration: 200 , iterations:1 , easing: "ease-in", fill: "forwards"})
-             botoncito.style.width = "0";
-             botoncito.style.display = "none";
-             document.getElementById("main").animate
+             document.getElementById("sidenav").animate
                 (
-                [{width :"80%"},{width :"100%"}],
-                {duration:200, iterations:1, easing: "ease-in", fill: "forwards" }
+                [{width : "100%" , display : "inherit"},{width : "0%" , display: "none"}],
+                {duration: 200 , iterations:1 , easing: "ease-in", fill: "forwards"}
                 )
-                botoncito.style.overflow="hidden";
-        document.getElementById("main").style.width = "100%";
-        document.getElementById("main").style.paddingLeft = "3em";
-        //botoncito.animate([{},{display :"none"}],{duration:200, iterations:1})
+             botoncito.style.width = "0";
+             botoncito.style.overflow="hidden";
         }
-        else{
+        else
+            /*despliegue parcial de la barra*/
+        {
+            document.getElementById("sidenav").animate
+                (
+                [{width : "20%",display : "inherit" },{width :"0%"  , display: "none"}],
+                {duration: 200 , iterations:1, easing: "ease-in", fill: "forwards" }
+                )
             document.getElementById("main").animate
                 (
                 [{width :"80%"},{width :"100%"}],
                 {duration:200, iterations:1, easing: "ease-in", fill: "forwards" }
                 )
             
-         botoncito.animate([{width : "20%" , display : "inherit"},{width : "0%"}],{duration: 200 , iterations:1, easing: "ease-in", fill: "forwards"})
-             botoncito.style.width = "0";
+            botoncito.style.width = "0";
             botoncito.style.overflow="hidden";
-             botoncito.classList.toggle('aparecermini')
-        document.getElementById("main").style.width = "100%";
-       document.getElementById("main").style.paddingLeft = "3em";
-       // botoncito.animate([{width :"20%",display:"inherit"},{width :"0%",display :"none"}],{duration:200, iterations:2})
-        
-            }
+            document.getElementById("main").style.width = "100%";
+            document.getElementById("main").style.paddingLeft = "3em";
+      
+         }
     } 
 }
 , false)
+
 /* usuario y contraseña */
 
 

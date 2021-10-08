@@ -563,61 +563,25 @@ button.paradas:hover{
 
 
 /*animacion automatica del tren a boton*/
+/*0.8=0.5 segundos
+15.87=10segundos
+*/
 @-webkit-keyframes runauto {
-  0% {
-    left: 0;
-  }
-  4.165%
-  {
-    left: 0;
-  }
-  15.275% {
-     left: calc(30%);
-  }
-  19.44% {
-    left: calc(30%  );
-  }
-  30.51%{ 
-    left: calc(59% );
-    }
-  34.675% { 
-    left: calc(59%  );
-  }
-  45.79% {
-left: calc(87%  ); 
--webkit-transform: rotateY(180deg); 
-  }
-
-  50% {
-    left: calc(87%  ); 
-     -webkit-transform: rotateY(0deg);
-  }
-
-  54.165%
-  {
-   left: calc(87%  ); 
-  }
-  65.275 {
-     left: calc(59%);
-  }
- 69.44%{
-    left: calc(59%  );
-  }
-  80.51%{ 
-    left: calc(30% );
-    }
-  84.675% { 
-    left: calc(30%  );
-  }
- 95.79%{
-    left: 0;
--webkit-transform: rotateY(0deg); 
-  }
-
-  100% {
-    left: 0; 
-     -webkit-transform: rotateY(180deg);
-  }
+  0%     { left: 0 !important;  }
+  0.8%   { left: calc(30%);}
+  16.67% { left: calc(30% ); }
+  17.47% { left: calc(59% ); }
+  33.34% { left: calc(59%);  }
+  34.14% { left: calc(87%); }
+  48.00% { left: calc(87%); -webkit-transform: rotateY(180deg);}
+  50%    { left: calc(87%); -webkit-transform: rotateY(0deg);}
+  50.08% { left: calc(59%);}
+  66.67% { left: calc(59%);}
+  67.47% { left: calc(30%);}
+  83.34% { left: calc(30%);}
+  84.14% { left: 0;}
+  98.00% { left: 0; -webkit-transform: rotateY(0deg);}
+  100%   { left: 0; -webkit-transform: rotateY(180deg);}
     
 }
 
@@ -646,19 +610,35 @@ text-align: initial;
     grid-row: all;
 }
 #movimiento img#tren {
-
   bottom: calc(28%);
     display: inline-block;
 position: relative;
 margin-left: 2.5%;
-  width: 5%;
+width: 5%;
   -webkit-transform: rotateY(180deg); 
+}
+/*posicionamiento de las paradas*/
+#movimiento img#tren.parada1{
+    left: 0;
+}
+#movimiento img#tren.parada2{
+    left: 30%;
+}
+#movimiento img#tren.parada3{
+    left: 60%;
+}
+#movimiento img#tren.parada4{
+    left: 90%;
+}
 
-
+#movimiento img#tren.arranque{
+overflow: visible;
+     width: 5%;
 }
 
 #movimiento img#tren.inicio{
--webkit-animation: runauto 12s  infinite; /*cantidad de repeticiones de la animacion*/
+     width: 5%;
+-webkit-animation: runauto 63s  infinite; /*cantidad de repeticiones de la animacion*/
 -webkit-animation-play-state: running;
 animation-play-state: running; 
 }
@@ -669,7 +649,12 @@ animation-play-state: running;
     -o-animation-play-state:paused; 
     animation-play-state:paused;
 }
-
+#movimiento img#tren.reinicio {
+    -webkit-animation-play-state: initial;
+    -moz-animation-play-state: initial;
+    -o-animation-play-state: initial;
+    animation-play-state: initial;
+}
 /* tamano mediano (tablets...)*/
 @media screen and (min-width: 550px) and (max-width: 990px) { 
 #contenedor{

@@ -1,4 +1,4 @@
-$(document).ready(function(){
+/*$(document).ready(function(){
     $.ajaxSetup({cache:false});
 setInterval(function(){
     actualizarVariables()
@@ -91,7 +91,7 @@ function enclavamientoManualAutomatico(boton){ //se espera que el parametro sea 
 
 
 /*envio de datos a plc INCLUIDOS CHECKBOXES A FALSE*/
-
+/*
 function enviarDatos(boton){
 	enclavamientoManualAutomatico(boton)
     var $form = $('#form-controles').clone();
@@ -118,8 +118,8 @@ function enviarDatos(boton){
 }
 /*animaciones del tren*/
 var uno = document.getElementById('iniciar') ; 
- var tren = document.getElementById('tren');  
-tren.value = 1;
+var tren = document.getElementById('tren');  
+tren.value=1
 console.log(tren.value)
 /*funcion de calcular el porcentaje*/
 function porcentage(valornormal, valor100) {
@@ -128,15 +128,32 @@ return (100 * valornormal) / valor100;
 /*funcion de la animacion del tren automatico*/
 function animaciontotal()
 {
-  tren.classList.toggle('pausa');/*en caso de que tenga esa clase lo quita, sino lo implementa*/
+    document.getElementById('tren').removeAttribute("style")
+  tren.classList.toggle('pausa');    /*en caso de que tenga esa clase lo quita, sino lo implementa*/
 if (uno.innerHTML == 'Iniciar Animacion'||uno.innerHTML == 'Reanudar Animacion')
   {
     if (uno.innerHTML == 'Iniciar Animacion') 
     {
-    tren.classList.toggle('inicio')
-    tren.classList.toggle('pausa');
+    if(tren.classList.contains("parada1") || 
+        tren.classList.contains("parada2")||
+        tren.classList.contains("parada3")||
+        tren.classList.contains("parada4"))
+    {
+     tren.value=1
+     tren.classList.remove("parada1", "parada2", "parada3", "parada4");
     }
-   uno.innerHTML = 'Pausar Animacion';
+    if(!tren.classList.contains('inicio'))
+    {
+        tren.classList.toggle('inicio');
+    }
+    tren.classList.toggle('pausa');
+     
+    if(tren.classList.contains('pausa'))
+    {
+        tren.classList.toggle('pausa');
+    }
+    }
+     uno.innerHTML = 'Pausar Animacion';
   }      
   else 
   {
@@ -144,7 +161,10 @@ if (uno.innerHTML == 'Iniciar Animacion'||uno.innerHTML == 'Reanudar Animacion')
   }
 }
 /*funcion de la animacion del tren manual*/
+
+
 function moveraparada(destino){
+   
   let diferencia=0
   let cambio="";
   let trenecito =parseInt(tren.value);
@@ -162,47 +182,112 @@ function moveraparada(destino){
     moverizquierda(destino,diferencia)
     document.getElementById('tren').value=destino
    }
-    
+   else
+    if (trenecito==destino && trenecito==1) {
+        cambio="derecha";   
+    diferencia=1
+       moverizquierda(destino,diferencia)
+    }
+    uno.innerHTML = 'Iniciar Animacion';
     console.log(destino + cambio + diferencia)
+    console.log(trenecito)
 }
+
+
 function moverizquierda(destino,cantidad)
 {    
+    if (tren.value==1 && destino==1 && tren.classList.contains('inicio')) {
+        tren.value=2
+    }
+    if(!tren.classList.contains('pausa') & tren.classList.contains('inicio')){
+    tren.classList.toggle('pausa');
+    }
   console.log(tren.value+","+destino)
   var idniani =porcentage((30*(tren.value-1)),100)+"%"
   var finiani=porcentage((30*(tren.value-1))-(30*cantidad),100)+"%"
   var tiempo=1000*cantidad
   console.log(idniani+","+finiani)
-  document.getElementById('tren').animate
-  (
-    [ 
-      { left: idniani }, 
-      { left: finiani }
-    ], 
-    {
-    duration: tiempo,
-    iterations: 1
+  if (tren.value==1) 
+  {
+    document.getElementById('tren').animate
+      (
+        [ 
+          { left: 0 },{ left: finiani }
+        ], 
+        {
+        duration: tiempo,
+        iterations: 1
+        }
+      )
+     .finished.then(() => { document.getElementById('tren').style.transform = 'left: finiani';  })
     }
-  )
-  tren.style.left = finiani;
-}
+  else
+  {
+        document.getElementById('tren').animate
+      (
+        [ 
+          { left: idniani },{ left: finiani }
+        ], 
+        {
+        duration: tiempo,
+        iterations: 1
+        }
+      )
+      .finished.then(() => { document.getElementById('tren').style.transform = 'left: finiani';  })
+  }  
+  tren.style.animationFillMode = "forwards"
+  tren.style.left= finiani
+  //tren.classList.remove("parada1", "parada2", "parada3", "parada4")
+  //tren.classList.toggle('parada'+destino);
+   }
+
+
 
 function moverderecha(destino,cantidad)
 {
+    if(!tren.classList.contains('pausa') & 
+        tren.classList.contains('inicio')){
+    tren.classList.toggle('pausa');
+    }
   console.log(tren.value+","+destino)
   var idniani=porcentage((30*(tren.value-1)),100)+"%"
   var finiani=porcentage((30*(tren.value-1))+(30*cantidad),100)+"%"
   var tiempo=1000*cantidad
   console.log(idniani+","+finiani)
-  document.getElementById('tren').animate
-(
-    [ 
-      { left: idniani }, 
-      { left: finiani }
-    ], 
-    {
-    duration: tiempo,
-    iterations: 1
-    }
-  )
-  tren.style.left = finiani;
+  if (tren.value==1) 
+  {
+    document.getElementById('tren').animate
+      (
+        [ 
+        { left: 0 }
+        , 
+          { left: finiani }
+        ], 
+        {
+        duration: tiempo,
+        iterations: 1
+        }
+      )
+      .finished.then(() => { document.getElementById('tren').style.transform = 'left: finiani';  })
+  }
+  else
+  {
+        document.getElementById('tren').animate
+      (
+        [ 
+          { left: idniani },{ left: finiani }
+        ], 
+        {
+        duration: tiempo,
+        iterations: 1
+        }
+      )
+      .finished.then(() => { document.getElementById('tren').style.transform = 'left: finiani';  })
+  }   
+tren.style.animationFillMode = "forwards"
+
+    tren.style.left= finiani
+    //tren.commitStyles();
+  //tren.classList.remove("parada1", "parada2", "parada3", "parada4")
+  //tren.classList.toggle('parada'+destino);
 }
